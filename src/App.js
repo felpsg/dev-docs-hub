@@ -4,8 +4,10 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contacts';
-
-// Importe os outros componentes de página conforme necessário
+import Sidebar from './components/Sidebar';
+import ReactDocs from './pages/JsDoc'; // Importe o componente ReactDocs
+import JavaScriptDocs from './pages/ReactDoc'; // Importe o componente JavaScriptDocs
+// Importe outros componentes de documentação conforme necessário
 
 function App() {
   return (
@@ -29,7 +31,6 @@ function App() {
           <source src="/video.mp4" type="video/mp4" />
         </video>
       </div>
-
       <div
         style={{
           position: 'relative',
@@ -40,12 +41,26 @@ function App() {
       >
         <Router>
           <Header /> {/* Header renderizado fora do componente Routes */}
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            {/* Outras rotas aqui */}
-          </Routes>
+          <div className="container-fluid">
+            <div className="row">
+              <Sidebar />
+              <div className="col-md-9">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/docs/react" element={<ReactDocs />} />{' '}
+                  {/* Rota para ReactDocs */}
+                  <Route
+                    path="/docs/javascript"
+                    element={<JavaScriptDocs />}
+                  />{' '}
+                  {/* Rota para JavaScriptDocs */}
+                  {/* Outras rotas para documentação aqui */}
+                </Routes>
+              </div>
+            </div>
+          </div>
         </Router>
       </div>
     </div>

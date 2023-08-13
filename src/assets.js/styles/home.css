@@ -4,9 +4,8 @@ p {
 }
 
 .home {
-  margin: 30px;
-  text-align: center;
-  font-family: Roboto Condensed, sans-serif;
+  margin-left: 10%;
+  margin-top: 25px;
 }
 
 .home span {
