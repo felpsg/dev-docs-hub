@@ -1,0 +1,10 @@
+h1,
+p {
+  color: #ffff !important;
+}
+
+.home {
+  margin: 20px;
+  text-align: center;
+  font-family: Roboto Condensed;
+}
