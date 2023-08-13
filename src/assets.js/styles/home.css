@@ -20,9 +20,28 @@ p {
   overflow: hidden;
   margin-top: -16rem;
   margin-left: -12rem;
-
 }
 
 canvas {
   display: block;
+}
+
+/* Estilos para a classe .home, .title, e .canvas-container (se houver) */
+
+.additional-section {
+  margin-top: -13rem;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+  width: 600px;
+}
+
+.additional-section h2 {
+  color: #fff;
+  padding-top: 20px;
+}
+
+.additional-section p {
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
 }

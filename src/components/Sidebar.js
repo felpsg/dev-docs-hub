@@ -6,7 +6,7 @@ function Sidebar() {
   return (
     <div className="col-md-3 sidebar">
       <h3>
-        <Link to="/docs" className="text-decoration-none">
+        <Link to="/" className="text-decoration-none">
           Documentação
         </Link>
       </h3>

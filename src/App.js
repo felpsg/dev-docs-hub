@@ -1,46 +1,27 @@
 import React from 'react';
+import videoSource from './assets.js/images/video.mp4'; // Importar o vídeo
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contacts';
 import Sidebar from './components/Sidebar';
-import ReactDocs from './pages/JsDoc'; // Importe o componente ReactDocs
-import JavaScriptDocs from './pages/ReactDoc'; // Importe o componente JavaScriptDocs
-// Importe outros componentes de documentação conforme necessário
+import ReactDocs from './pages/JsDoc';
+import JavaScriptDocs from './pages/ReactDoc';
+import './App.css';
 
 function App() {
   return (
     <div>
-      <div
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: -1,
-        }}
-      >
-        <video
-          autoPlay
-          loop
-          muted
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-        >
-          <source src="/video.mp4" type="video/mp4" />
+      <div className="video-container">
+        <video autoPlay loop muted>
+          <source src={videoSource} type="video/mp4" />{' '}
+          {/* Utilizar o vídeo importado */}
         </video>
       </div>
-      <div
-        style={{
-          position: 'relative',
-          zIndex: 1,
-          overflow: 'hidden',
-          minHeight: '100vh',
-        }}
-      >
+      <div className="content-container">
         <Router>
-          <Header /> {/* Header renderizado fora do componente Routes */}
+          <Header />
           <div className="container-fluid">
             <div className="row">
               <Sidebar />
@@ -49,14 +30,8 @@ function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/contact" element={<Contact />} />
-                  <Route path="/docs/react" element={<ReactDocs />} />{' '}
-                  {/* Rota para ReactDocs */}
-                  <Route
-                    path="/docs/javascript"
-                    element={<JavaScriptDocs />}
-                  />{' '}
-                  {/* Rota para JavaScriptDocs */}
-                  {/* Outras rotas para documentação aqui */}
+                  <Route path="/docs/react" element={<ReactDocs />} />
+                  <Route path="/docs/javascript" element={<JavaScriptDocs />} />
                 </Routes>
               </div>
             </div>

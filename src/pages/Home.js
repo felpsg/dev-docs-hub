@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { Canvas, useLoader } from '@react-three/fiber';
 import { TextureLoader } from 'three';
+import Chat from '../components/Chat';
 import '../assets.js/styles/home.css';
 import codeTexture1 from '../assets.js/images/code1.jpg';
 import codeTexture2 from '../assets.js/images/code2.jpg';
@@ -41,11 +42,15 @@ const Home = () => {
   return (
     <div className="home">
       <h1 className="title">
-        <span>CodeHub</span>
+        Bem vindo ao<span>CodeHub</span>
       </h1>
-      <p className="sub-title">
-        Você encontrará documentações sobre várias tecnologias front-end.
+      <p className="">
+        Você encontrará documentações completas e atualizadas sobre
+        <br /> várias tecnologias front-end. Navegue por guias, tutoriais e
+        referências <br />
+        abrangentes.
       </p>
+
       <div className="canvas-container">
         <Canvas>
           <ambientLight />
@@ -56,6 +61,17 @@ const Home = () => {
             <RotatingBlock position={[0, 0, 0]} texture={codeTexture3} />
           </Suspense>
         </Canvas>
+      </div>
+
+      {/* Nova seção */}
+      <div className="additional-section">
+        <h2>Explore Mais Tecnologias</h2>
+        <p>
+          Descubra mais sobre as linguagens de programação, frameworks e
+          bibliotecas mais recentes em nosso repositório.
+        </p>
+        {/* o editor de texto ficaria aqui */}
+        <Chat />
       </div>
     </div>
   );

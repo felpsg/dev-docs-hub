@@ -8,12 +8,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* Ajusta o z-index aqui */
+  z-index: 1;
 }
 
 .content-container {
   position: relative;
-  z-index: 1; /* Ajusta o z-index aqui */
+  z-index: 999;
   overflow: 'hidden';
 }
 
@@ -21,6 +21,7 @@
   justify-content: center !important;
   height: 100px;
   border-bottom: 2px solid #f39c12;
+  z-index: 1; /* Ajusta o z-index aqui */
 }
 
 .nav-menu {
@@ -43,7 +44,7 @@
   font-size: 55px;
   cursor: pointer;
   color: #f39c12;
-  margin: 0; /* Remove margens adicionais */
+  margin: 0;
   letter-spacing: 2px;
 }
 
@@ -73,4 +74,23 @@
 .button-close:hover {
   background-color: #fff !important;
   color: #000 !important;
+}
+
+/* Adicione essas regras para animar o ícone de foguete */
+@keyframes rocketAnimation {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(10deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.rocket-icon {
+  width: 30px;
+  height: 30px;
+  animation: rocketAnimation 2s infinite;
 }

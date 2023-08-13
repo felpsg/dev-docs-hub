@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../assets.js/styles/header.css';
+import rocketIcon from '../assets.js/images/rocket-icon.png';
 
 const codeSnippets = [
   `
@@ -36,6 +37,7 @@ function Header() {
   }, [isMenuOpen]);
 
   const openMenu = () => {
+    console.log('Menu opening...');
     setIsMenuOpen(true);
     setTypingText('');
   };
@@ -49,8 +51,14 @@ function Header() {
     <header>
       <nav className="navbar">
         <div className="menu-container">
+          {/* Substitua o texto pelo código HTML da nova logo */}
           <div id="logo" className="navbar-brand" onClick={openMenu}>
             CodeHub
+            <img
+              src={rocketIcon}
+              alt="Rocket Icon"
+              className="rocket-icon"
+            />{' '}
           </div>
         </div>
       </nav>
