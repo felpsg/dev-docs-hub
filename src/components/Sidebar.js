@@ -2,6 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../assets.js/styles/sidebar.css';
 
+const links = [
+  { path: '/docs/react', label: 'React.js' },
+  { path: '/docs/javascript', label: 'JavaScript' },
+  { path: '/docs/vue', label: 'Vue' },
+  { path: '/docs/bootstrap', label: 'Bootstrap' },
+  { path: '/docs/tailwind', label: 'Tailwind' },
+];
+
 function Sidebar() {
   return (
     <div className="col-md-3 sidebar">
@@ -10,33 +18,14 @@ function Sidebar() {
           Documentação
         </Link>
       </h3>
-
       <ul className="list-group">
-        <li className="list-group-item">
-          <a href="/docs/react" className="text-decoration-none">
-            React.js
-          </a>
-        </li>
-        <li className="list-group-item">
-          <a href="/docs/javascript" className="text-decoration-none">
-            JavaScript
-          </a>
-        </li>
-        <li className="list-group-item">
-          <a href="/docs/vue" className="text-decoration-none">
-            Vue
-          </a>
-        </li>
-        <li className="list-group-item">
-          <a href="/docs/bootstrap" className="text-decoration-none">
-            Bootstrap
-          </a>
-        </li>
-        <li className="list-group-item">
-          <a href="/docs/tailwind" className="text-decoration-none">
-            Tailwind
-          </a>
-        </li>
+        {links.map((link, index) => (
+          <li className="list-group-item" key={index}>
+            <Link to={link.path} className="text-decoration-none">
+              {link.label}
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );

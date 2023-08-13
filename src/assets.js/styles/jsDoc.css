@@ -1,0 +1,57 @@
+.js-doc-container h1 {
+  margin-top: 1rem;
+  color: #e0e0e0 !important;
+}
+
+.custom-card {
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: solid 1px #fff;
+}
+
+.custom-card-header {
+  font-weight: bold;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.custom-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.custom-button {
+  padding: 5px 10px;
+  background-color: #535c6c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  margin-right: 5px;
+  z-index: 1;
+}
+
+.custom-button:hover {
+  background-color: #e0e0e0;
+  color: black;
+}
+
+.text-p {
+  text-align: center;
+  font-style: italic;
+}
+
+.title-color {
+  color: #fff;
+}
+.custom-card-header {
+  color: #e0e0e0;
+}

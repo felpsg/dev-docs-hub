@@ -2,6 +2,18 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../assets.js/styles/chat.css';
 
+const GPT_URL = 'https://api.openai.com/v1/chat/completions';
+const HEADERS = {
+  'Content-Type': 'application/json',
+  Authorization: `#`,
+};
+
+const Message = ({ sender, text }) => (
+  <div className={sender === 'user' ? 'user-message' : 'bot-message'}>
+    {text}
+  </div>
+);
+
 const Chat = () => {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([]);
@@ -9,46 +21,33 @@ const Chat = () => {
   const handleInputChange = (e) => setInput(e.target.value);
 
   const getResponseFromGPT = async (prompt) => {
-    const url = 'https://api.openai.com/v1/chat/completions';
-    const headers = {
-      'Content-Type': 'application/json',
-      Authorization: `#`,
-    };
     const data = {
       model: 'gpt-3.5-turbo',
-      messages: [
-        {
-          role: 'user',
-          content: prompt,
-        },
-      ],
+      messages: [{ role: 'user', content: prompt }],
     };
     try {
-      const response = await axios.post(url, data, { headers: headers });
+      const response = await axios.post(GPT_URL, data, { headers: HEADERS });
       return response.data.choices[0].message.content;
     } catch (error) {
       console.error('Erro ao chamar a API:', error);
-      return null;
+      return 'Desculpe, algo deu errado. Tente novamente.';
     }
   };
 
   const handleSubmit = async () => {
-    setMessages([...messages, { sender: 'user', text: input }]);
+    const userMessage = { sender: 'user', text: input, id: Date.now() };
+    setMessages([...messages, userMessage]);
     const botResponse = await getResponseFromGPT(input);
-    if (botResponse) {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { sender: 'bot', text: botResponse },
-      ]);
-    }
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { sender: 'bot', text: botResponse, id: Date.now() },
+    ]);
     setInput('');
   };
 
   const startNewChat = () => {
     setInput('');
-    setMessages([
-      { sender: 'bot', text: 'Bem-vindo ao CodeHub! Como posso ajudar?' },
-    ]);
+    setMessages([{ sender: 'bot', text: 'Bem-vindo ao CodeHub! Como posso ajudar?', id: Date.now() }]);
   };
 
   const clearConversation = () => {
@@ -63,15 +62,8 @@ const Chat = () => {
         <button onClick={clearConversation}>Limpar Conversa</button>
       </div>
       <div className="messages">
-        {messages.map((message, index) => (
-          <div
-            key={index}
-            className={
-              message.sender === 'user' ? 'user-message' : 'bot-message'
-            }
-          >
-            {message.text}
-          </div>
+        {messages.map((message) => (
+          <Message key={message.id} sender={message.sender} text={message.text} />
         ))}
       </div>
       <div className="input-container">

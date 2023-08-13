@@ -15,44 +15,45 @@ const codeSnippets = [
   `,
 ];
 
-function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const useTypingEffect = (isMenuOpen) => {
   const [typingText, setTypingText] = useState('');
 
   useEffect(() => {
-    let timeouts = [];
-    const typeSnippet = () => {
-      for (let i = 0; i < codeSnippets[0].length; i++) {
-        const timeout = setTimeout(() => {
-          setTypingText((prevText) => prevText + codeSnippets[0][i]);
-        }, i * 10);
-        timeouts.push(timeout);
-      }
-    };
-
-    if (isMenuOpen) typeSnippet();
-
-    // Limpeza de timeouts
-    return () => timeouts.forEach((timeout) => clearTimeout(timeout));
+    let timeout;
+    if (isMenuOpen) {
+      const typeSnippet = () => {
+        for (let i = 0; i < codeSnippets[0].length; i++) {
+          timeout = setTimeout(() => {
+            setTypingText((prevText) => prevText + codeSnippets[0][i]);
+          }, i * 10);
+        }
+      };
+      typeSnippet();
+    }
+    return () => clearTimeout(timeout);
   }, [isMenuOpen]);
 
-  const openMenu = () => {
-    console.log('Menu opening...');
-    setIsMenuOpen(true);
-    setTypingText('');
-  };
+  return typingText;
+};
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-    setTypingText('');
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const typingText = useTypingEffect(isMenuOpen);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    if (isMenuOpen) {
+      console.log('Menu closing...');
+    } else {
+      console.log('Menu opening...');
+    }
   };
 
   return (
     <header>
       <nav className="navbar">
         <div className="menu-container">
-          {/* Substitua o texto pelo código HTML da nova logo */}
-          <div id="logo" className="navbar-brand" onClick={openMenu}>
+          <div id="logo" className="navbar-brand" onClick={toggleMenu}>
             CodeHub
             <img
               src={rocketIcon}
@@ -67,13 +68,13 @@ function Header() {
           <pre className="code-snippet">
             <div dangerouslySetInnerHTML={{ __html: typingText }} />
           </pre>
-          <button onClick={closeMenu} className="nav-link button-close">
+          <button onClick={toggleMenu} className="nav-link button-close">
             X
           </button>
         </div>
       )}
     </header>
   );
-}
+};
 
 export default Header;
