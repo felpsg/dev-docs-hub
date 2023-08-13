@@ -4,7 +4,12 @@ p {
 }
 
 .home {
-  margin: 20px;
+  margin: 30px;
   text-align: center;
-  font-family: Roboto Condensed;
+  font-family: Roboto Condensed, sans-serif;
+}
+
+.home span {
+  font-family: 'Brush Script MT', cursive;
+  letter-spacing: 1px;
 }
