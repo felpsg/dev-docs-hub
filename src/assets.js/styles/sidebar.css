@@ -4,6 +4,16 @@
 
 .sidebar h3 {
   color: #fff;
+  font-family: 'Brush Script MT', cursive;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 18px;
+  font-size: 2rem;
+}
+
+.sidebar h3 a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .sidebar .list-group-item {
@@ -12,7 +22,6 @@
   border-top: none;
   border-left: none;
   border-right: none;
-
 }
 
 .sidebar .list-group-item:hover {

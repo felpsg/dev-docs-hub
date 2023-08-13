@@ -12,3 +12,17 @@ p {
   font-family: 'Brush Script MT', cursive;
   letter-spacing: 1px;
 }
+
+.canvas-container {
+  width: 100%;
+  height: 900px; /* Você pode ajustar este valor conforme necessário */
+  position: relative;
+  overflow: hidden;
+  margin-top: -16rem;
+  margin-left: -12rem;
+
+}
+
+canvas {
+  display: block;
+}
