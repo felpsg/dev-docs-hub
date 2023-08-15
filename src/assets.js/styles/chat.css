@@ -1,5 +1,5 @@
 .chat-container {
-  width: 800px;
+  width: auto;
   background: linear-gradient(
     to right,
     rgba(26, 32, 44, 0.7),
@@ -10,8 +10,8 @@
   padding: 20px;
   margin: 20px auto; /* Margem ajustada */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  margin-left: -5rem;
   height: 750px;
+
 }
 
 .messages {
