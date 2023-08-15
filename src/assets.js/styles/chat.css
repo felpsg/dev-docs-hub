@@ -104,7 +104,8 @@
     margin: auto;
     margin-left: 0; /* Resetar a margem esquerda */
     height: auto; /* Altura automática */
-    margin-top: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
   .messages {
@@ -129,3 +130,35 @@
     font-size: 12px; /* Reduzir tamanho da fonte ainda mais */
   }
 }
+
+/* Estilos para dispositivos com largura de tela maior que 800 e menor que 1200px */
+
+@media (min-width: 800px) and (max-width: 1200px) {
+  .chat-container {
+    width: 90%; /* Utiliza a largura total do dispositivo */
+    padding: 10px;
+    margin: auto;
+    margin-left: 0; /* Resetar a margem esquerda */
+    height: auto; /* Altura automática */
+    margin-top: 4rem !important;
+    margin-bottom: 2rem;
+  }
+
+  .messages {
+    height: 350px; /* Ajustar conforme necessário */
+  }
+
+  .input-container input,
+  .input-container button {
+    padding: 5px; /* Reduzir padding */
+  }
+
+  .chat-controls button {
+    padding: 5px;
+    font-size: 14px; /* Reduzir tamanho da fonte */
+  }
+}
+
+/* acima de 1200 até 2000 */
+
+

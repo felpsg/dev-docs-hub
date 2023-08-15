@@ -11,6 +11,10 @@
   font-size: 2rem;
 }
 
+.documentacion:hover {
+  color: #f8a244 !important;
+}
+
 .sidebar h3 a {
   color: #fff;
   text-decoration: none;
@@ -69,4 +73,3 @@
 .sidebar .list-group-item:hover a {
   color: #f8a244; /* Cor do texto no hover */
 }
-

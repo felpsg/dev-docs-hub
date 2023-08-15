@@ -5,6 +5,7 @@ body {
   font-family: Roboto Condensed, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #181a1b !important;
 }
 
 code {

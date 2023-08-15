@@ -4,7 +4,7 @@ p {
 }
 
 .home {
-  margin-left: 10%;
+  margin-left: 25%;
   margin-top: 25px;
 }
 
@@ -13,83 +13,51 @@ p {
   letter-spacing: 1px;
 }
 
+.title span {
+  color: #f8a244;
+}
+
 .canvas-container {
   width: 100%;
-  height: 900px; /* Você pode ajustar este valor conforme necessário */
+  height: 900px;
   position: relative;
   overflow: hidden;
   margin-top: -16rem;
-  margin-left: -12rem;
+  margin-left: -6rem;
 }
 
 canvas {
   display: block;
 }
 
-/* Estilos para a classe .home, .title, e .canvas-container (se houver) */
-
 .additional-section {
-  margin-top: -13rem;
-  text-align: center;
+  margin-top: -15rem;
   border-top: 1px solid #e0e0e0;
   width: 600px;
 }
 
 .additional-section h2 {
   color: #fff;
-  padding-top: 20px;
+  padding-top: 2rem;
 }
 
-.additional-section p {
-  color: #666;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* CSS existente */
-
-/* Estilos para dispositivos com largura de tela menor ou igual a 600px */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .home {
     margin-left: 5%;
   }
-
-  .canvas-container {
-    height: 600px; /* Ajustar conforme necessário */
-    margin-top: -10rem;
-    margin-left: -6rem;
+  br {
+    display: none;
   }
-
   .additional-section {
-    width: 100%; /* Utilizar a largura total em telas menores */
-    padding: 0 20px; /* Adicionar padding para evitar o conteúdo colado nas bordas */
+    margin-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+    width: 100%;
   }
-
   .additional-section h2,
-  .additional-section p {
-    font-size: 16px; /* Ajustar o tamanho da fonte se necessário */
+  p {
+    padding-top: 2rem;
   }
-}
-
-/* Estilos para dispositivos com largura de tela menor ou igual a 400px */
-@media (max-width: 400px) {
-  .home {
-    margin-left: 2%;
-  }
-
   .canvas-container {
-    height: 500px; /* Ajustar conforme necessário */
-    margin-top: -9rem;
-    margin-left: 0rem;
-  }
-
-  .additional-section {
-    padding: 0 10px;
-    margin-top: -7rem;
-  }
-
-  .additional-section h2,
-  .additional-section p {
-    font-size: 14px; /* Ajustar o tamanho da fonte se necessário */
+    display: none;
   }
 }

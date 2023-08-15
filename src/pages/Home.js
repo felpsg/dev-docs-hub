@@ -1,11 +1,12 @@
 import React, { Suspense } from 'react';
 import { Canvas, useLoader, useFrame } from '@react-three/fiber';
 import { TextureLoader } from 'three';
-import Chat from '../components/Chat';
-import '../assets.js/styles/home.css';
+import videoSource from '../assets.js/images/video.mp4'; // Importar o vídeo
 import codeTexture1 from '../assets.js/images/code1.jpg';
 import codeTexture2 from '../assets.js/images/code2.jpg';
 import codeTexture3 from '../assets.js/images/code3.jpg';
+import Chat from '../components/Chat';
+import '../assets.js/styles/home.css';
 
 const RotatingBlock = ({ position, texture, rotationSpeed = 0.01 }) => {
   const loadedTexture = useLoader(TextureLoader, texture);
@@ -36,6 +37,11 @@ const Loading = () => (
 
 const Home = () => (
   <div className="home">
+    <div className="video-container">
+      <video autoPlay loop muted>
+        <source src={videoSource} type="video/mp4" />
+      </video>
+    </div>
     <h1 className="title">
       Bem vindo ao<span>CodeHub</span>
     </h1>
