@@ -8,6 +8,7 @@ import Sidebar from './components/Sidebar';
 import ReactDocs from './pages/JsDoc';
 import JavaScriptDocs from './pages/ReactDoc';
 import './App.css';
+import Chat from './components/Chat';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/docs/react" element={<ReactDocs />} />
                 <Route path="/docs/javascript" element={<JavaScriptDocs />} />
+                <Route path="/chat" element={<Chat />} />
               </Routes>
             </div>
           </div>

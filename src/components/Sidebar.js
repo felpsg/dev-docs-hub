@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 import '../assets.js/styles/sidebar.css';
 
 const links = [
+  { path: '/chat', label: 'HubeGPT' },
   { path: '/docs/react', label: 'React.js' },
   { path: '/docs/javascript', label: 'JavaScript' },
   { path: '/docs/vue', label: 'Vue' },
   { path: '/docs/bootstrap', label: 'Bootstrap' },
   { path: '/docs/tailwind', label: 'Tailwind' },
+  
 ];
 
 function Sidebar() {

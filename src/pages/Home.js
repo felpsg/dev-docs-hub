@@ -5,10 +5,14 @@ import videoSource from '../assets.js/images/video.mp4'; // Importar o vídeo
 import codeTexture1 from '../assets.js/images/code1.jpg';
 import codeTexture2 from '../assets.js/images/code2.jpg';
 import codeTexture3 from '../assets.js/images/code3.jpg';
-import Chat from '../components/Chat';
 import '../assets.js/styles/home.css';
 
-const RotatingBlock = ({ position, texture, rotationSpeed = 0.01 }) => {
+const RotatingBlock = ({
+  position,
+  texture,
+  rotationSpeed = 0.01,
+  scale = 1.5,
+}) => {
   const loadedTexture = useLoader(TextureLoader, texture);
   const ref = React.useRef();
 
@@ -20,8 +24,23 @@ const RotatingBlock = ({ position, texture, rotationSpeed = 0.01 }) => {
     }
   });
 
+  const handleMouseOver = (e) => {
+    e.object.scale.set(scale, scale, scale);
+    document.body.style.cursor = 'pointer'; // Alterar o cursor para "mãozinha"
+  };
+
+  const handleMouseOut = (e) => {
+    e.object.scale.set(1, 1, 1);
+    document.body.style.cursor = 'default'; // Voltar o cursor ao padrão
+  };
+
   return (
-    <mesh ref={ref} position={position}>
+    <mesh
+      ref={ref}
+      position={position}
+      onPointerOver={handleMouseOver}
+      onPointerOut={handleMouseOut}
+    >
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial map={loadedTexture} />
     </mesh>
@@ -67,7 +86,6 @@ const Home = () => (
         Descubra mais sobre as linguagens de programação, frameworks e
         bibliotecas mais recentes em nosso repositório.
       </p>
-      <Chat />
     </div>
   </div>
 );
