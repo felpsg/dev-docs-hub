@@ -1,11 +1,23 @@
 import React from 'react';
 import '../assets.js/styles/jsDoc.css';
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const CARD_CONTENTS = [
   {
     header: 'Introdução',
     title: 'Conceitos Básicos',
-    text: 'Aprenda os conceitos básicos do JavaScript, como variáveis, tipos de dados, e funções.',
+    snippets: [
+      { code: 'const x = 10;', explanation: 'Declaração de uma constante.' },
+      {
+        code: 'function greet() { return "Hello!"; }',
+        explanation: 'Definição de uma função.',
+      },
+      {
+        code: 'if (x > 5) { console.log("x é maior que 5"); }',
+        explanation: 'Uso de uma instrução condicional.',
+      },
+    ],
   },
   {
     header: 'Avançado',
@@ -23,9 +35,6 @@ function JsDoc() {
   return (
     <div className="js-doc-container">
       <h1 className="text-center">Documentação JavaScript</h1>
-      <p className="text-p">
-        Aqui você encontrará documentações sobre React.js.
-      </p>
       <div className="card-container">
         {CARD_CONTENTS.map((content, index) => (
           <div className="custom-card" key={index}>
@@ -33,10 +42,18 @@ function JsDoc() {
             <div className="custom-card-body">
               <h5 className="title-color">{content.title}</h5>
               <p>{content.text}</p>
+              {content.snippets &&
+                content.snippets.map((snippet, snippetIndex) => (
+                  <div key={snippetIndex}>
+                    <SyntaxHighlighter language="javascript" style={docco}>
+                      {snippet.code}
+                    </SyntaxHighlighter>
+                    <p>{snippet.explanation}</p>
+                  </div>
+                ))}
               <button className="custom-button">Ler Mais</button>
             </div>
           </div>
-      
         ))}
       </div>
     </div>
