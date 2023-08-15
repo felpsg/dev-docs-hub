@@ -45,3 +45,51 @@ canvas {
   max-width: 800px;
   margin: 0 auto;
 }
+
+/* CSS existente */
+
+/* Estilos para dispositivos com largura de tela menor ou igual a 600px */
+@media (max-width: 600px) {
+  .home {
+    margin-left: 5%;
+  }
+
+  .canvas-container {
+    height: 600px; /* Ajustar conforme necessário */
+    margin-top: -10rem;
+    margin-left: -6rem;
+  }
+
+  .additional-section {
+    width: 100%; /* Utilizar a largura total em telas menores */
+    padding: 0 20px; /* Adicionar padding para evitar o conteúdo colado nas bordas */
+  }
+
+  .additional-section h2,
+  .additional-section p {
+    font-size: 16px; /* Ajustar o tamanho da fonte se necessário */
+  }
+}
+
+/* Estilos para dispositivos com largura de tela menor ou igual a 400px */
+@media (max-width: 400px) {
+  .home {
+    margin-left: 2%;
+  }
+
+  .canvas-container {
+    height: 500px; /* Ajustar conforme necessário */
+    margin-top: -9rem;
+    margin-left: 0rem;
+  }
+
+  .additional-section {
+    padding: 0 10px;
+    margin-top: -7rem;
+  }
+
+  .additional-section h2,
+  .additional-section p {
+    font-size: 14px; /* Ajustar o tamanho da fonte se necessário */
+  }
+}

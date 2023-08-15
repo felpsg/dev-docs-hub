@@ -5,20 +5,41 @@ import '../assets.js/styles/chat.css';
 const GPT_URL = 'https://api.openai.com/v1/chat/completions';
 const HEADERS = {
   'Content-Type': 'application/json',
-  Authorization: `#`,
+  Authorization: ``, // Sua chave de API aqui
 };
-
-const Message = ({ sender, text }) => (
-  <div className={sender === 'user' ? 'user-message' : 'bot-message'}>
-    {text}
-  </div>
-);
 
 const Chat = () => {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([]);
 
   const handleInputChange = (e) => setInput(e.target.value);
+
+  const startNewChat = () => {
+    setInput('');
+    setMessages([
+      {
+        sender: 'bot',
+        text: 'Bem-vindo ao CodeHub! Como posso ajudar?',
+        id: Date.now(),
+      },
+    ]);
+  };
+
+  const clearConversation = () => {
+    setInput('');
+    setMessages([]);
+  };
+
+  const handleSubmit = async () => {
+    const userMessage = { sender: 'user', text: input, id: Date.now() };
+    setMessages([...messages, userMessage]);
+    const botResponse = await getResponseFromGPT(input);
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { sender: 'bot', text: botResponse, id: Date.now() },
+    ]);
+    setInput('');
+  };
 
   const getResponseFromGPT = async (prompt) => {
     const data = {
@@ -34,25 +55,10 @@ const Chat = () => {
     }
   };
 
-  const handleSubmit = async () => {
-    const userMessage = { sender: 'user', text: input, id: Date.now() };
-    setMessages([...messages, userMessage]);
-    const botResponse = await getResponseFromGPT(input);
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      { sender: 'bot', text: botResponse, id: Date.now() },
-    ]);
-    setInput('');
-  };
-
-  const startNewChat = () => {
-    setInput('');
-    setMessages([{ sender: 'bot', text: 'Bem-vindo ao CodeHub! Como posso ajudar?', id: Date.now() }]);
-  };
-
-  const clearConversation = () => {
-    setInput('');
-    setMessages([]);
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleSubmit(); 
+    }
   };
 
   return (
@@ -63,11 +69,24 @@ const Chat = () => {
       </div>
       <div className="messages">
         {messages.map((message) => (
-          <Message key={message.id} sender={message.sender} text={message.text} />
+          <div
+            key={message.id}
+            className={
+              message.sender === 'user' ? 'user-message' : 'bot-message'
+            }
+          >
+            {message.text}
+          </div>
         ))}
       </div>
       <div className="input-container">
-        <input type="text" value={input} onChange={handleInputChange} />
+        <input
+          type="text"
+          value={input}
+          onChange={handleInputChange}
+          onKeyPress={handleKeyPress} 
+        />
+
         <button onClick={handleSubmit}>Enviar</button>
       </div>
     </div>

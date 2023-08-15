@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../assets.js/styles/header.css';
-import rocketIcon from '../assets.js/images/rocket-icon.png';
+import rocketIcon from '../assets.js/images/rocket-icon1.png';
 
 const codeSnippets = [
   `
