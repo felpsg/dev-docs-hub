@@ -21,7 +21,7 @@ function Step2() {
           className="javascript-image"
         />{' '}
         {/* Imagem adicionada */}
-        <p className="italic-text text brendan">{contents.brendan }</p>
+        <p className="italic-text text brendan">{contents.brendan}</p>
         {/* Se você tiver mais conteúdo, você pode adicioná-lo aqui */}
       </div>
     </div>

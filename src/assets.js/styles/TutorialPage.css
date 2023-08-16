@@ -1,14 +1,47 @@
-.button-p {
+.navigation-buttons {
+  display: flex;
+  justify-content: start;
+}
+
+.button-p,
+.button-step {
   padding: 10px;
-  margin: 0 10px;
+  margin: 0 8px;
   border: none;
   background: #4a5568;
   color: white;
   cursor: pointer;
   transition: background 0.3s ease;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; /* Margem inferior para separar os botões da barra de progresso */
 }
 
-.button-p:hover {
+.button-p:hover,
+.button-step:hover {
   background: #2d3748;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  height: 25px; /* Ajustado para uma altura maior */
+  background-color: #000;
+  border-radius: 4px;
+  position: relative;
+}
+
+.progress-fill {
+  height: 25px; /* Mantendo a altura da barra preenchida */
+  border-radius: 4px;
+  background-color: #00ccff;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-percentage {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  transform: translateY(-50%); /* Centralizando verticalmente */
 }
