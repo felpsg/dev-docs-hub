@@ -6,6 +6,7 @@
   color: white;
   cursor: pointer;
   transition: background 0.3s ease;
+  margin-bottom: 2rem;
 }
 
 .button-p:hover {

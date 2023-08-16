@@ -1,26 +1,29 @@
 import React from 'react';
-import { CARD_CONTENTS } from '../pages/JsDoc'; // Ajuste o caminho conforme necessário
-import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { CARD_CONTENTS } from '../pages/JsDoc';
+import '../assets.js/styles/Step1.css'; // Importando o mesmo CSS
 
 function Step2() {
-  // Você pode escolher partes específicas de CARD_CONTENTS ou adicionar novos elementos
   const contents = CARD_CONTENTS[1]; // Pega o segundo objeto em CARD_CONTENTS
 
   return (
-    <div className="tutorial-step2-container">
-      <h1>{contents.header}</h1>
-      <h3>{contents.title}</h3>
-      <p>{contents.text}</p>
-      {contents.snippets &&
-        contents.snippets.map((snippet, snippetIndex) => (
-          <div key={snippetIndex}>
-            <SyntaxHighlighter language="javascript" style={docco}>
-              {snippet.code}
-            </SyntaxHighlighter>
-            <p>{snippet.explanation}</p>
-          </div>
+    <div className="custom-card">
+      <div className="custom-card-header">{contents.header}</div>
+      <div className="custom-card-body">
+        <h5 className="title-color">{contents.title}</h5>
+        {contents.text.map((paragraph, index) => (
+          <p key={index} className="text">
+            {paragraph}
+          </p>
         ))}
+        <img
+          src={contents.image}
+          alt="História do JavaScript"
+          className="javascript-image"
+        />{' '}
+        {/* Imagem adicionada */}
+        <p className="italic-text text brendan">{contents.brendan }</p>
+        {/* Se você tiver mais conteúdo, você pode adicioná-lo aqui */}
+      </div>
     </div>
   );
 }

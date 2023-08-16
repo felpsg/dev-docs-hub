@@ -1,7 +1,6 @@
 import React from 'react';
-import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { CARD_CONTENTS } from '../pages/JsDoc';
+import '../assets.js/styles/Step1.css';
 
 function Step1() {
   const content = CARD_CONTENTS[0]; // Introdução
@@ -11,16 +10,13 @@ function Step1() {
       <div className="custom-card-header">{content.header}</div>
       <div className="custom-card-body">
         <h5 className="title-color">{content.title}</h5>
-        <p>{content.text}</p>
-        {content.snippets &&
-          content.snippets.map((snippet, snippetIndex) => (
-            <div key={snippetIndex}>
-              <SyntaxHighlighter language="javascript" style={docco}>
-                {snippet.code}
-              </SyntaxHighlighter>
-              <p>{snippet.explanation}</p>
-            </div>
-          ))}
+        <p className="text">{content.text}</p>
+        <h6 className="sub-title">{content.subtitle}</h6>
+        <p className="text">{content.text2}</p>
+        <h6 className="sub-title">{content.subtitle2}</h6>
+        <p className="text">{content.text2}</p>
+        <h6 className="sub-title">{content.subtitle3}</h6>
+        <p className="text">{content.text3}</p>
       </div>
     </div>
   );

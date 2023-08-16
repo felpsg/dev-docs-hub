@@ -1,0 +1,59 @@
+.custom-card {
+  background-color: #1a1a1a;
+  border: 1px solid #3a3a3a;
+  border-radius: 15px;
+  color: #f0f0f0;
+  margin: 30px;
+  padding: 30px;
+}
+
+.custom-card-header {
+  font-size: 42px;
+  font-weight: bold;
+  color: #ffcc00;
+  margin-bottom: 15px;
+}
+
+.title-color,
+.sub-title,
+.advantages,
+.disadvantages,
+.benefits,
+.drawbacks {
+  font-size: 26px;
+  font-weight: bold;
+  color: #00ccff !important;
+  margin-bottom: 15px;
+}
+
+.text {
+  font-size: 22px;
+  margin-top: 1rem;
+}
+
+.italic-text {
+  font-style: italic;
+}
+
+.brendan {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.highlighted-text {
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+.custom-snippet {
+  font-family: monospace !important;
+  font-size: 18px;
+  padding: 5px;
+  color: #fff !important;
+  border: solid 1px #f0f0f0 !important;
+  padding-top: 1rem;
+}
+
+.conclusion {
+  margin-top: 1rem;
+}
