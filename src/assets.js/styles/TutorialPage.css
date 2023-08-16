@@ -1,0 +1,13 @@
+.button-p {
+  padding: 10px;
+  margin: 0 10px;
+  border: none;
+  background: #4a5568;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button-p:hover {
+  background: #2d3748;
+}

@@ -5,10 +5,11 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contacts';
 import Sidebar from './components/Sidebar';
-import ReactDocs from './pages/JsDoc';
-import JavaScriptDocs from './pages/ReactDoc';
-import './App.css';
 import Chat from './components/Chat';
+import TutorialPage from './Tutorial/TutorialPage';
+import Step2 from './Tutorial/Step2';
+import Step1 from './Tutorial/Step1';
+import './App.css';
 
 function App() {
   return (
@@ -23,9 +24,10 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/docs/react" element={<ReactDocs />} />
-                <Route path="/docs/javascript" element={<JavaScriptDocs />} />
+                <Route path="/Tutorial/step1" element={<Step1 />} />
                 <Route path="/chat" element={<Chat />} />
+                <Route path="/tutorial" element={<TutorialPage />} />
+                <Route path="/tutorial/step2" element={<Step2 />} />
               </Routes>
             </div>
           </div>

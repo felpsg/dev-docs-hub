@@ -4,12 +4,11 @@ import '../assets.js/styles/sidebar.css';
 
 const links = [
   { path: '/chat', label: 'HubeGPT' },
-  { path: '/docs/react', label: 'JavaScript' },
+  { path: '/tutorial', label: 'JavaScript Tutorial' }, // Adicionado
   { path: '/docs/javascript', label: 'React.js' },
   { path: '/docs/vue', label: 'Vue' },
   { path: '/docs/bootstrap', label: 'Bootstrap' },
   { path: '/docs/tailwind', label: 'Tailwind' },
-  
 ];
 
 function Sidebar() {
