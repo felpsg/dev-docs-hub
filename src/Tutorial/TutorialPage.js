@@ -5,8 +5,8 @@ import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
 import Step4 from './Step4';
-import '../assets.js/styles/TutorialPage.css';
-import { useLocation } from 'react-router-dom';
+import '../assets.js/styles/TutorialPage.css'; // Corrigido o caminho
+import { useLocation, useNavigate } from 'react-router-dom'; // Importação corrigida
 
 const stepsComponents = [Step1, Step2, Step3, Step4];
 
@@ -15,7 +15,7 @@ function ProgressBar({ progress }) {
     <div className="progress-bar">
       <div className="progress-fill" style={{ width: `${progress}%` }}>
         <span
-          className="progress-percentage" // Adicione sua classe aqui
+          className="progress-percentage"
           style={{ color: progress > 100 ? '#fff' : '#000' }}
         >
           {progress.toFixed(0)}%
@@ -26,11 +26,13 @@ function ProgressBar({ progress }) {
 }
 
 function NavigationButton({ step, totalSteps, dispatch }) {
+  const navigate = useNavigate(); // Adicionado novamente
   const handleStepChange = (change) => {
     const newStep = step + change;
     if (newStep >= 1 && newStep <= totalSteps) {
       dispatch(setStep(newStep));
       dispatch(setProgress((newStep - 1) * (100 / (totalSteps - 1))));
+      navigate(`/tutorial/step${newStep}`); // Adicionado novamente
     }
   };
 
