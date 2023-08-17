@@ -37,11 +37,7 @@
 }
 
 .progress-percentage {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 1rem;
-  transform: translateY(-50%); /* Centralizando verticalmente */
+  font-size: 18px; /* Exemplo de estilo */
+  font-weight: bold;
+  color: #fff !important;
 }

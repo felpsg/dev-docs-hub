@@ -5,16 +5,16 @@ import './index.css';
 import './assets.js/styles/reset.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { Provider } from 'react-redux';
+import store from './store';
 
-// Obtendo o elemento root do DOM
 const root = document.getElementById('root');
 
-// Criando uma raiz (root) concorrente
-const appRoot = ReactDOM.createRoot(root);
-
-// Renderizando o componente App dentro do elemento root em modo estrito
-appRoot.render(
+ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
+  root,
 );

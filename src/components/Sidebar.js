@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setStep } from '../store/actions'; // Import the necessary actions
 import '../assets.js/styles/sidebar.css';
 
 const links = [
@@ -13,6 +15,14 @@ const links = [
         path: '/tutorial/step2',
         label: 'Introdução',
       },
+      {
+        path: '/tutorial/step3',
+        label: 'Vantagens e Desvantagens',
+      },
+      {
+        path: '/tutorial/step4',
+        label: 'Vantagens e Desvantagens',
+      },
       // Adicione mais etapas conforme necessário
     ],
   },
@@ -25,6 +35,15 @@ const links = [
 function Sidebar() {
   const [openSubMenu, setOpenSubMenu] = useState(null);
   const location = useLocation();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // Verifica qual é o passo atual com base na rota
+    const stepFromPath = location.pathname.split('/tutorial/step')[1];
+    if (stepFromPath) {
+      dispatch(setStep(Number(stepFromPath)));
+    }
+  }, [location.pathname, dispatch]);
 
   const handleClick = (index) => {
     if (openSubMenu === index) {
@@ -36,11 +55,7 @@ function Sidebar() {
 
   return (
     <div className="col-md-3 sidebar">
-      <h3>
-        <Link to="/" className="text-decoration-none documentacion">
-          Documentação
-        </Link>
-      </h3>
+      {/* ... Restante do seu código ... */}
       <ul className="list-group">
         {links.map((link, index) => (
           <li className="list-group-item" key={index}>
