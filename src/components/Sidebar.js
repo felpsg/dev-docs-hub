@@ -5,7 +5,7 @@ import { setStep } from '../store/actions';
 import '../assets.js/styles/sidebar.css';
 
 const links = [
-  { path: '/chat', label: 'HubeGPT' },
+  { path: '/', label: 'Home' },
   {
     path: '/tutorial',
     label: 'JavaScript Tutorial',
@@ -20,6 +20,7 @@ const links = [
   { path: '/docs/vue', label: 'Vue' },
   { path: '/docs/bootstrap', label: 'Bootstrap' },
   { path: '/docs/tailwind', label: 'Tailwind' },
+  { path: '/chat', label: 'HubeGPT' },
 ];
 
 const SubMenu = ({ subLinks, location }) => (
