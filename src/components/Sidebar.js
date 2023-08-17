@@ -72,15 +72,25 @@ function Sidebar() {
       <ul className="list-group">
         {links.map((link, index) => (
           <li className="list-group-item" key={index}>
-            <Link
-              to={link.path}
-              onClick={() => toggleSubMenu(index, !!link.subLinks)}
-              className={`text-decoration-none ${
-                location.pathname.startsWith(link.path) ? 'active-link' : ''
-              }`}
-            >
-              {link.label}
-            </Link>
+            {link.subLinks ? (
+              <div // Alterado de Link para div
+                onClick={() => toggleSubMenu(index, !!link.subLinks)}
+                className={`text-decoration-none ${
+                  location.pathname.startsWith(link.path) ? 'active-link' : ''
+                }`}
+              >
+                {link.label}
+              </div>
+            ) : (
+              <Link
+                to={link.path}
+                className={`text-decoration-none ${
+                  location.pathname.startsWith(link.path) ? 'active-link' : ''
+                }`}
+              >
+                {link.label}
+              </Link>
+            )}
             {openSubMenu === index && link.subLinks && (
               <SubMenu subLinks={link.subLinks} location={location} />
             )}
