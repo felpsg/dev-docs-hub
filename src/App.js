@@ -32,6 +32,8 @@ function App() {
                 <Route path="/tutorial/step2" element={<Step2 />} />
                 <Route path="/tutorial/step3" element={<Step3 />} />
                 <Route path="/tutorial/step4" element={<Step4 />} />
+                <Route path="/tutorial/step1" component={Step1} />
+                <Route path="/tutorial/step2" component={Step2} />
               </Routes>
             </div>
           </div>

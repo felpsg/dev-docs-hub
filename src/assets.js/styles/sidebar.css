@@ -73,3 +73,15 @@
 .sidebar .list-group-item:hover a {
   color: #f8a244; /* Cor do texto no hover */
 }
+
+.sub-menu {
+  padding-left: 15px;
+  list-style-type: none;
+}
+
+.active-link {
+  border-bottom: 2px solid #f8a244;
+  padding: 3px 0px;
+  color: #f8a244;
+  font-weight: bold;
+}
