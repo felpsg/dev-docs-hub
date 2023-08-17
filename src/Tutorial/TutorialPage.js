@@ -78,6 +78,10 @@ function TutorialPage() {
     dispatch(setProgress((stepFromPath - 1) * (100 / (totalSteps - 1))));
   }, [location.pathname, dispatch, totalSteps]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]); // Dependência da rota
+
   return (
     <div>
       {React.createElement(stepsComponents[step - 1])}
