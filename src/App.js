@@ -19,7 +19,7 @@ function App() {
             <Sidebar />
             <div className="col-md-9">
               <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/pages/home" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/chat" element={<Chat />} />
