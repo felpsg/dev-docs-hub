@@ -50,3 +50,10 @@
   color: #ffcc00;
 }
 
+.list-group-item {
+  border: none !important; /* Remove a borda dos itens */
+}
+
+.sidebar .list-group {
+  border: none !important; /* Remove a borda do container da lista */
+}

@@ -5,7 +5,7 @@ import { setStep } from '../store/actions';
 import '../assets.js/styles/sidebar.css';
 
 const links = [
-  { path: 'pages/home', label: 'Home' },
+  { path: '/pages/home', label: 'Home' },
   { path: '/chat', label: 'HubeGPT' },
   {
     path: '/tutorial',

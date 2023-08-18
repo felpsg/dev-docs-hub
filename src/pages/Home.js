@@ -7,6 +7,7 @@ import codeTexture2 from '../assets.js/images/code2.jpg';
 import codeTexture3 from '../assets.js/images/code3.jpg';
 import '../assets.js/styles/home.css';
 
+
 const RotatingBlock = ({
   position,
   texture,
