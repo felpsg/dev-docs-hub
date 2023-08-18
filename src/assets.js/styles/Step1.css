@@ -3,8 +3,10 @@
   border: 1px solid #3a3a3a;
   border-radius: 15px;
   color: #f0f0f0;
-  margin: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   padding: 30px;
+  width: auto;
 }
 
 .custom-card-header {
@@ -60,4 +62,39 @@
 
 img {
   width: 100%;
+}
+
+/* media query */
+
+@media (max-width: 768px) {
+  .custom-card {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
+  }
+
+  .custom-card-header {
+    font-size: 27px;
+  }
+
+  .title-color,
+  .sub-title,
+  .advantages,
+  .disadvantages,
+  .benefits,
+  .drawbacks {
+    font-size: 22px !important;
+  }
+
+  .text {
+    font-size: 18px;
+  }
+
+  .brendan {
+    font-size: 12px;
+  }
+
+  .custom-snippet {
+    font-size: 15px;
+  }
 }

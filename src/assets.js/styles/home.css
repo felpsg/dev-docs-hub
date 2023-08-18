@@ -63,8 +63,8 @@ canvas {
 
 /* media query tela maior que 1080 ate 1600px */
 
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
   .canvas-container {
-    margin-left: -17rem;
+    margin-left: -20rem;
   }
 }

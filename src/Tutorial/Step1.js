@@ -17,6 +17,7 @@ function Step1() {
         <p className="text">{content.text2}</p>
         <h6 className="sub-title">{content.subtitle3}</h6>
         <p className="text">{content.text3}</p>
+        <p className="conclusion">{content.conclusion}</p>
       </div>
     </div>
   );
