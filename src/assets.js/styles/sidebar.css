@@ -43,7 +43,7 @@
 
 .text-decoration-none {
   text-decoration: none;
-  color: inherit; /* Cor do link inalterada (branca) */
+  color: inherit; 
 }
 
 .text-decoration-none:hover {
@@ -51,9 +51,9 @@
 }
 
 .list-group-item {
-  border: none !important; /* Remove a borda dos itens */
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+  border-bottom: solid 1px #fff !important;
 }
 
-.sidebar .list-group {
-  border: none !important; /* Remove a borda do container da lista */
-}
