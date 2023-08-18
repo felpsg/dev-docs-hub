@@ -23,7 +23,7 @@ p {
   position: relative;
   overflow: hidden;
   margin-top: -16rem;
-  margin-left: -6rem;
+  margin-left: -3rem;
 }
 
 canvas {
@@ -58,5 +58,13 @@ canvas {
   }
   .canvas-container {
     display: none;
+  }
+}
+
+/* media query tela maior que 1080 ate 1600px */
+
+@media (min-width: 1400px) {
+  .canvas-container {
+    margin-left: -17rem;
   }
 }

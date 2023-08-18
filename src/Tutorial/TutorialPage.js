@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setStep, setProgress } from '../store/actions';
+import carSvg from '../assets.js/images/car.svg';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
@@ -11,15 +12,32 @@ import { useLocation, useNavigate } from 'react-router-dom'; // Importação cor
 const stepsComponents = [Step1, Step2, Step3, Step4];
 
 function ProgressBar({ progress }) {
+  const displayProgress = Math.min(progress, 100);
+
   return (
-    <div className="progress-bar">
-      <div className="progress-fill" style={{ width: `${progress}%` }}>
-        <span
-          className="progress-percentage"
-          style={{ color: progress > 100 ? '#fff' : '#000' }}
-        >
-          {progress.toFixed(0)}%
-        </span>
+    <div className="progress-container">
+      <div className="progress-road">
+        <div className="progress-bar" />
+        <img
+          src={carSvg}
+          className="car"
+          style={{ left: `${displayProgress}%` }}
+          alt="car"
+        />
+        <span className="car-percentage">{displayProgress.toFixed(0)}%</span>
+        {/* Adiciona confetes quando o progresso atinge 100% */}
+        {displayProgress === 100 &&
+          Array.from({ length: 100 }).map((_, index) => (
+            <div
+              key={index}
+              className="confetti show"
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 2}s`,
+                backgroundColor: `hsl(${Math.random() * 360}, 100%, 50%)`,
+              }}
+            />
+          ))}
       </div>
     </div>
   );
