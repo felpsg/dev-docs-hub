@@ -5,14 +5,13 @@ import { setStep } from '../store/actions';
 import '../assets.js/styles/sidebar.css';
 
 const links = [
-  { path: '/pages/home', label: 'Home' },
+  { path: '/pages/home', label: 'Home' }, // AQUI ESTA O ERRO DE CAMINHO DO LINK PARA O INICIO
   { path: '/chat', label: 'HubeGPT' },
   {
     path: '/tutorial',
     label: 'JavaScript Tutorial',
     subLinks: [
-      { path: '/tutorial/step1', label: 'Inicio' },
-      { path: '/tutorial/step2', label: 'Introdução' },
+      { path: '/tutorial/step1', label: 'Inicio' }, 
       { path: '/tutorial/step3', label: 'Vantagens e Desvantagens' },
       { path: '/tutorial/step4', label: 'Lógica de Programação' },
     ],

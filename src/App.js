@@ -20,9 +20,8 @@ function App() {
             <Sidebar />
             <div className="col-md-9">
               <Routes>
-                <Route path="/" element={<Navigate to="/pages/home" />} />{' '}
-                {/* Adicione esta linha */}
-                <Route path="/pages/home" element={<Home />} />
+                <Route path="/" element={<Navigate to="/home" />} />
+                <Route path="/home" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/chat" element={<Chat />} />
