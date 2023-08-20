@@ -26,18 +26,6 @@ function ProgressBar({ progress }) {
         />
         <span className="car-percentage">{displayProgress.toFixed(0)}%</span>
         {/* Adiciona confetes quando o progresso atinge 100% */}
-        {displayProgress === 100 &&
-          Array.from({ length: 100 }).map((_, index) => (
-            <div
-              key={index}
-              className="confetti show"
-              style={{
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 2}s`,
-                backgroundColor: `hsl(${Math.random() * 360}, 100%, 50%)`,
-              }}
-            />
-          ))}
       </div>
     </div>
   );

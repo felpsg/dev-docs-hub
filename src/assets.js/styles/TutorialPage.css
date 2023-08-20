@@ -85,33 +85,4 @@
   transform: translate(-50%, -50%);
 }
 
-/* Confete chegada */
-.confetti {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 10px;
-  height: 10px;
-  background: red;
-  opacity: 0; /* Inicialmente invisível */
-  animation: drop 1s linear infinite;
-}
 
-@keyframes drop {
-  0% {
-    top: -10px;
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    top: 100%;
-    opacity: 0;
-  }
-}
-
-.confetti.show {
-  opacity: 1;
-}
