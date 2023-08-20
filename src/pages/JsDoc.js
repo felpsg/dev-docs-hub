@@ -68,7 +68,6 @@ export const CARD_CONTENTS = [
     brendan: 'Brendan Eich, criador do JavaScript',
   },
 
-  
   {
     header: 'JavaScript: Vantagens e Desvantagens',
     title: 'Um Olhar Detalhado',

@@ -11,7 +11,8 @@ const links = [
     path: '/tutorial',
     label: 'JavaScript Tutorial',
     subLinks: [
-      { path: '/tutorial/step1', label: 'Inicio' }, 
+      { path: '/tutorial/step1', label: 'Inicio' },
+      { path: '/tutorial/step2', label: 'Introdução ao JavaScript' },
       { path: '/tutorial/step3', label: 'Vantagens e Desvantagens' },
       { path: '/tutorial/step4', label: 'Lógica de Programação' },
     ],
