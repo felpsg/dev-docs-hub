@@ -5,7 +5,7 @@ import { setStep } from '../store/actions';
 import '../assets.js/styles/sidebar.css';
 
 const links = [
-  { path: '/pages/home', label: 'Home' }, // AQUI ESTA O ERRO DE CAMINHO DO LINK PARA O INICIO
+  { path: '/home', label: 'Home' }, // QUERO QUE QUANDO CLICAR NESSE LINK ELE VOLTA PARA HOME
   { path: '/chat', label: 'HubeGPT' },
   {
     path: '/tutorial',
