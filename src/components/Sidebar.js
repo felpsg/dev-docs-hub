@@ -5,7 +5,7 @@ import { setStep } from '../store/actions';
 import '../assets.js/styles/sidebar.css';
 
 const links = [
-  { path: '/home', label: 'Home' }, // QUERO QUE QUANDO CLICAR NESSE LINK ELE VOLTA PARA HOME
+  { path: '/home', label: 'Home' },
   { path: '/chat', label: 'HubeGPT' },
   {
     path: '/tutorial',
@@ -17,7 +17,17 @@ const links = [
       { path: '/tutorial/step4', label: 'Lógica de Programação' },
     ],
   },
-  { path: '/docs/javascript', label: 'React.js' },
+
+  {
+    path: '/tutorial/react',
+    label: 'React Tutorial',
+    subLinks: [
+      { path: '/tutorial/react/step1', label: 'Inicio' },
+      { path: '/tutorial/react/step2', label: 'Introdução ao React' },
+      // Você pode continuar adicionando os passos aqui
+    ],
+  },
+
   { path: '/docs/vue', label: 'Vue' },
   { path: '/docs/bootstrap', label: 'Bootstrap' },
   { path: '/docs/tailwind', label: 'Tailwind' },
