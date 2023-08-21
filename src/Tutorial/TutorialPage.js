@@ -9,6 +9,8 @@ import Step4 from './Step4';
 
 // importantando os componentes de cada step React
 import ReactStep1 from './React/Step1';
+import ReactStep2 from './React/Step2';
+
 
 import '../assets.js/styles/TutorialPage.css';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -16,7 +18,7 @@ import ProgressBar from './ProgressBar';
 import NavigationButton from './NavigationButton';
 
 const javascriptSteps = [Step1, Step2, Step3, Step4];
-const reactSteps = [ReactStep1, ReactStep1, ReactStep1, ReactStep1];
+const reactSteps = [ReactStep1, ReactStep2, ReactStep1, ReactStep1];
 
 function TutorialPage({ tutorialType }) {
   const totalSteps = 4;

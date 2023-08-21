@@ -2,8 +2,8 @@ import React from 'react';
 import { REACT_CARD_CONTENTS } from '../../pages/ReactDoc';
 import '../../assets.js/styles/Step1.css';
 
-function Step1() {
-  const content = REACT_CARD_CONTENTS[0]; // Introdução ao React
+function Step2() {
+  const content = REACT_CARD_CONTENTS[1]; // Introdução ao React
 
   return (
     <div className="custom-card">
@@ -23,4 +23,4 @@ function Step1() {
   );
 }
 
-export default Step1;
+export default Step2;
