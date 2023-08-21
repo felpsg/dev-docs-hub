@@ -1,81 +1,46 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setStep, setProgress } from '../store/actions';
-import carSvg from '../assets.js/images/car.svg';
+// importantando os componentes de cada step JS
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
 import Step4 from './Step4';
-import '../assets.js/styles/TutorialPage.css'; // Corrigido o caminho
-import { useLocation, useNavigate } from 'react-router-dom'; // Importação corrigida
 
-const stepsComponents = [Step1, Step2, Step3, Step4];
+// importantando os componentes de cada step React
+import ReactStep1 from './React/Step1';
 
-function ProgressBar({ progress }) {
-  const displayProgress = Math.min(progress, 100);
+import '../assets.js/styles/TutorialPage.css';
+import { useLocation, useNavigate } from 'react-router-dom';
+import ProgressBar from './ProgressBar';
+import NavigationButton from './NavigationButton';
 
-  return (
-    <div className="progress-container">
-      <div className="progress-road">
-        <div className="progress-bar" />
-        <img
-          src={carSvg}
-          className="car"
-          style={{ left: `${displayProgress}%` }}
-          alt="car"
-        />
-        <span className="car-percentage">{displayProgress.toFixed(0)}%</span>
-        {/* Adiciona confetes quando o progresso atinge 100% */}
-      </div>
-    </div>
-  );
-}
+const javascriptSteps = [Step1, Step2, Step3, Step4];
+const reactSteps = [ReactStep1, ReactStep1, ReactStep1, ReactStep1];
 
-function NavigationButton({ step, totalSteps, dispatch }) {
-  const navigate = useNavigate(); // Adicionado novamente
-  const handleStepChange = (change) => {
-    const newStep = step + change;
-    if (newStep >= 1 && newStep <= totalSteps) {
-      dispatch(setStep(newStep));
-      dispatch(setProgress((newStep - 1) * (100 / (totalSteps - 1))));
-      navigate(`/tutorial/step${newStep}`); // Adicionado novamente
-    }
-  };
-
-  return (
-    <div className="navigation-buttons">
-      {step > 1 && (
-        <button className="button-p" onClick={() => handleStepChange(-1)}>
-          Anterior
-        </button>
-      )}
-      <button
-        className="button-p"
-        onClick={() => handleStepChange(1)}
-        disabled={step === totalSteps}
-      >
-        Próximo
-      </button>
-      {Array.from({ length: totalSteps }, (_, index) => (
-        <button
-          key={index}
-          className="button-step"
-          onClick={() => handleStepChange(index + 1 - step)}
-          disabled={step === index + 1}
-        >
-          {index + 1}
-        </button>
-      ))}
-    </div>
-  );
-}
-
-function TutorialPage() {
+function TutorialPage({ tutorialType }) {
   const totalSteps = 4;
   const dispatch = useDispatch();
   const tutorialState = useSelector((state) => state.tutorialReducer);
   const { step, progress } = tutorialState;
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const stepsComponents =
+    tutorialType === 'react' ? reactSteps : javascriptSteps;
+
+  const handleStepChange = (change) => {
+    const newStep = step + change;
+    if (newStep >= 1 && newStep <= totalSteps) {
+      dispatch(setStep(newStep));
+      dispatch(setProgress((newStep - 1) * (100 / (totalSteps - 1))));
+      const path =
+        tutorialType === 'react'
+          ? `/tutorial/react/step${newStep}`
+          : `/tutorial/step${newStep}`;
+      navigate(path);
+    }
+  };
 
   useEffect(() => {
     const stepFromPath =
@@ -90,11 +55,16 @@ function TutorialPage() {
 
   return (
     <div>
-      {React.createElement(stepsComponents[step - 1])}
+      {React.createElement(stepsComponents[step - 1], {
+        step,
+        totalSteps,
+        handleStepChange,
+        progress,
+      })}
       <NavigationButton
         step={step}
         totalSteps={totalSteps}
-        dispatch={dispatch}
+        handleStepChange={handleStepChange}
       />
       <ProgressBar progress={progress} />
     </div>

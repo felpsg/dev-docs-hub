@@ -10,9 +10,6 @@ import Sidebar from './components/Sidebar';
 import Chat from './components/Chat';
 import TutorialPage from './Tutorial/TutorialPage';
 
-// Importe os componentes React que você criou
-import ReactStep1 from './Tutorial/React/Step1';
-
 //... Outros componentes
 
 function App() {
@@ -34,23 +31,30 @@ function App() {
                 {/* Tutorial JavaScript inicio */}
                 <Route
                   path="/tutorial/step1"
-                  element={<TutorialPage step={1} />}
+                  element={<TutorialPage tutorialType="javascript" step={1} />}
                 />
                 <Route
                   path="/tutorial/step2"
-                  element={<TutorialPage step={2} />}
+                  element={<TutorialPage tutorialType="javascript" step={2} />}
                 />
                 <Route
                   path="/tutorial/step3"
-                  element={<TutorialPage step={3} />}
+                  element={<TutorialPage tutorialType="javascript" step={3} />}
                 />
                 <Route
                   path="/tutorial/step4"
-                  element={<TutorialPage step={4} />}
+                  element={<TutorialPage tutorialType="javascript" step={4} />}
                 />
 
                 {/* Tutorial React inicio */}
-                <Route path="/tutorial/react/step1" element={<ReactStep1 />} />
+                <Route
+                  path="/tutorial/react/step1"
+                  element={<TutorialPage tutorialType="react" step={1} />}
+                />
+                <Route
+                  path="/tutorial/react/step2"
+                  element={<TutorialPage tutorialType="react" step={2} />}
+                />
               </Routes>
             </div>
           </div>

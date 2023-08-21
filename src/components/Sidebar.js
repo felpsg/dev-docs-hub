@@ -8,7 +8,7 @@ const links = [
   { path: '/home', label: 'Home' },
   { path: '/chat', label: 'HubeGPT' },
   {
-    path: '/tutorial',
+    path: '/tutorial/javascript',
     label: 'JavaScript Tutorial',
     subLinks: [
       { path: '/tutorial/step1', label: 'Inicio' },
@@ -17,14 +17,12 @@ const links = [
       { path: '/tutorial/step4', label: 'Lógica de Programação' },
     ],
   },
-
   {
     path: '/tutorial/react',
     label: 'React Tutorial',
     subLinks: [
       { path: '/tutorial/react/step1', label: 'Inicio' },
       { path: '/tutorial/react/step2', label: 'Introdução ao React' },
-      // Você pode continuar adicionando os passos aqui
     ],
   },
 
@@ -53,30 +51,32 @@ const SubMenu = ({ subLinks, location }) => (
   </ul>
 );
 
-function Sidebar() {
+const Sidebar = () => {
   const [openSubMenu, setOpenSubMenu] = useState(null);
   const location = useLocation();
   const dispatch = useDispatch();
 
-  const toggleSubMenu = (index, hasSubLinks) => {
-    if (openSubMenu === index || !hasSubLinks) {
-      setOpenSubMenu(null);
-    } else {
-      setOpenSubMenu(index);
-    }
+  const handleSubMenuToggle = (index, hasSubLinks) => {
+    setOpenSubMenu(openSubMenu === index || !hasSubLinks ? null : index);
   };
 
   useEffect(() => {
-    const stepFromPath = Number(location.pathname.split('/tutorial/step')[1]);
+    const stepFromPath = Number(
+      location.pathname.split('/tutorial/')[1]?.split('/step')[1] ||
+        location.pathname.split('/tutorial/react/')[1]?.split('/step')[1],
+    );
+
     if (stepFromPath) {
       dispatch(setStep(stepFromPath));
     }
 
-    const matchingLinkIndex = links.findIndex((link) =>
-      location.pathname.startsWith(link.path),
-    );
-    setOpenSubMenu(matchingLinkIndex);
-  }, [location.pathname, dispatch]);
+    if (openSubMenu === null) {
+      const matchingLinkIndex = links.findIndex((link) =>
+        location.pathname.startsWith(link.path),
+      );
+      setOpenSubMenu(matchingLinkIndex);
+    }
+  }, [location.pathname, dispatch, openSubMenu]);
 
   return (
     <div className="col-md-3 sidebar">
@@ -84,8 +84,8 @@ function Sidebar() {
         {links.map((link, index) => (
           <li className="list-group-item" key={index}>
             {link.subLinks ? (
-              <div // Alterado de Link para div
-                onClick={() => toggleSubMenu(index, !!link.subLinks)}
+              <div
+                onClick={() => handleSubMenuToggle(index, !!link.subLinks)}
                 className={`text-decoration-none ${
                   location.pathname.startsWith(link.path) ? 'active-link' : ''
                 }`}
@@ -110,6 +110,6 @@ function Sidebar() {
       </ul>
     </div>
   );
-}
+};
 
 export default Sidebar;
