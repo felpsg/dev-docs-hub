@@ -73,10 +73,11 @@ const Header = () => {
 
           <p className="modal-message">
             <span className="aviso">Aviso de Desenvolvedor</span>: A cafeína
-            está em níveis críticos. Uma xícara virtual de café pode prevenir
-            bugs inesperados. Se nosso conteúdo agregou algo a você, considere
-            paga-nos um café? Sua doação mantém nosso código fluindo!
+            está em níveis críticos. Um café virtual previne bugs. Esse conteúdo é
+            gratuito para apoiar novos devs que estão entrando na área. Ajude-nos com um café! Sua doação
+            mantém nosso código fluindo e apoia a comunidade.
           </p>
+
           <img src={qrCodeImage} alt="QR Code" className="qr-code-image" />
           <button className="close-button" onClick={closeModal}>
             X

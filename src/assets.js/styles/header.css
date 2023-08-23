@@ -173,6 +173,7 @@
 
 .close-button:hover {
   background: #2d3748;
+  transform: scale(1.1);
 }
 
 /* qrcode */
