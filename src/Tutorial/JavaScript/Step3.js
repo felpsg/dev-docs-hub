@@ -2,7 +2,7 @@ import React from 'react';
 import { CARD_CONTENTS } from '../../pages/JsDoc';
 import '../../assets.js/styles/Step1.css'; 
 
-function Step3() {
+function JavaScriptStep3() {
   const contents = CARD_CONTENTS[2]; // Pega o terceiro objeto em CARD_CONTENTS
 
   return (
@@ -30,4 +30,4 @@ function Step3() {
   );
 }
 
-export default Step3;
+export default JavaScriptStep3;

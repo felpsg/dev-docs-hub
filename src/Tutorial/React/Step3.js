@@ -3,7 +3,7 @@ import { REACT_CARD_CONTENTS } from '../../pages/ReactDoc';
 import '../../assets.js/styles/Step1.css';
 
 function Step3() {
-  const content = REACT_CARD_CONTENTS[1]; // Introdução ao React
+  const content = REACT_CARD_CONTENTS[2]; // Introdução ao React
 
   return (
     <div className="custom-card">

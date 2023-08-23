@@ -4,7 +4,7 @@ import '../../assets.js/styles/Step1.css';
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-function Step4() {
+function JavaScriptStep4() {
   const contents = CARD_CONTENTS[3];
 
   return (
@@ -45,4 +45,4 @@ function Step4() {
   );
 }
 
-export default Step4;
+export default JavaScriptStep4;

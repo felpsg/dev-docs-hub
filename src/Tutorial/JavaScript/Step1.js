@@ -1,8 +1,8 @@
 import React from 'react';
 import { CARD_CONTENTS } from '../../pages/JsDoc';
-import '../../assets.js/styles/Step1.css'; 
+import '../../assets.js/styles/Step1.css';
 
-function Step1() {
+function JavaScriptStep1() {
   const content = CARD_CONTENTS[0]; // Introdução
 
   return (
@@ -23,4 +23,4 @@ function Step1() {
   );
 }
 
-export default Step1;
+export default JavaScriptStep1;

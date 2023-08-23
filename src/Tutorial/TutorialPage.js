@@ -22,6 +22,7 @@ const javascriptSteps = [
   JavaScriptStep3,
   JavaScriptStep4,
 ];
+
 const reactSteps = [ReactStep1, ReactStep2, ReactStep3];
 
 function TutorialPage({ tutorialType }) {
@@ -34,7 +35,10 @@ function TutorialPage({ tutorialType }) {
   const location = useLocation();
   const navigate = useNavigate();
 
+  console.log('Location Path:', location.pathname);
+
   const handleStepChange = (change) => {
+    console.log('handleStepChange called');
     const newStep = step + change;
     if (newStep >= 1 && newStep <= totalSteps) {
       dispatch(setStep(newStep));
@@ -44,6 +48,7 @@ function TutorialPage({ tutorialType }) {
           ? `/tutorial/react/step${newStep}`
           : `/tutorial/javascript/step${newStep}`;
 
+      console.log('Navigating to:', path);
       navigate(path);
     }
   };
@@ -53,14 +58,18 @@ function TutorialPage({ tutorialType }) {
       Number(location.pathname.split(`/tutorial/${tutorialType}/step`)[1]) || 1;
     dispatch(setStep(stepFromPath));
     dispatch(setProgress((stepFromPath - 1) * (100 / (totalSteps - 1))));
+
+    console.log('Step from path:', stepFromPath);
   }, [location.pathname, dispatch, totalSteps, tutorialType]);
 
   useEffect(() => {
+    console.log('Scrolling to top');
     window.scrollTo(0, 0);
   }, [location.pathname]); // Dependência da rota
 
   return (
     <div>
+      {console.log('Rendering step:', step)}
       {React.createElement(stepsComponents[step - 1], {
         step,
         totalSteps,

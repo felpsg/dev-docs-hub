@@ -1,6 +1,6 @@
 import React from 'react';
 import { REACT_CARD_CONTENTS } from '../../pages/ReactDoc';
-import '../../assets.js/styles/Step1.css'; 
+import '../../assets.js/styles/Step1.css';
 
 function Step1() {
   const content = REACT_CARD_CONTENTS[0]; // Introdução ao React

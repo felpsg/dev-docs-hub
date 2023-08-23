@@ -10,10 +10,10 @@ import Sidebar from './components/Sidebar';
 import Chat from './components/Chat';
 import TutorialPage from './Tutorial/TutorialPage';
 
-import Step1 from './Tutorial/JavaScript/Step1';
-import Step2 from './Tutorial/JavaScript/Step2';
-import Step3 from './Tutorial/JavaScript/Step3';
-import Step4 from './Tutorial/JavaScript/Step4';
+import JavaScriptStep1 from './Tutorial/JavaScript/Step1';
+import JavaScriptStep2 from './Tutorial/JavaScript/Step2';
+import JavaScriptStep3 from './Tutorial/JavaScript/Step3';
+import JavaScriptStep4 from './Tutorial/JavaScript/Step4';
 
 import ReactStep1 from './Tutorial/React/Step1';
 import ReactStep2 from './Tutorial/React/Step2';
@@ -39,10 +39,10 @@ function App() {
                   path="/tutorial/javascript/*"
                   element={<TutorialPage tutorialType="javascript" />}
                 >
-                  <Route path="step1" element={<Step1 />} />
-                  <Route path="step2" element={<Step2 />} />
-                  <Route path="step3" element={<Step3 />} />
-                  <Route path="step4" element={<Step4 />} />
+                  <Route path="step1" element={<JavaScriptStep1 />} />
+                  <Route path="step2" element={<JavaScriptStep2 />} />
+                  <Route path="step3" element={<JavaScriptStep3 />} />
+                  <Route path="step4" element={<JavaScriptStep4 />} />
                 </Route>
                 <Route
                   path="/tutorial/react/*"
