@@ -1,6 +1,6 @@
 import React from 'react';
-import { CARD_CONTENTS } from '../pages/JsDoc';
-import '../assets.js/styles/Step1.css'; // Importando o mesmo CSS
+import { CARD_CONTENTS } from '../../pages/JsDoc';
+import '../../assets.js/styles/Step1.css'; 
 
 function Step2() {
   const contents = CARD_CONTENTS[1]; // Pega o segundo objeto em CARD_CONTENTS

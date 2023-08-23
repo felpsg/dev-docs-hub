@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setStep, setProgress } from '../store/actions';
-import Step1 from './Step1';
-import Step2 from './Step2';
-import Step3 from './Step3';
-import Step4 from './Step4';
+
+import JavaScriptStep1 from './JavaScript/Step1';
+import JavaScriptStep2 from './JavaScript/Step2';
+import JavaScriptStep3 from './JavaScript/Step3';
+import JavaScriptStep4 from './JavaScript/Step4';
 
 import ReactStep1 from './React/Step1';
 import ReactStep2 from './React/Step2';
@@ -15,7 +16,12 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import ProgressBar from './ProgressBar';
 import NavigationButton from './NavigationButton';
 
-const javascriptSteps = [Step1, Step2, Step3, Step4];
+const javascriptSteps = [
+  JavaScriptStep1,
+  JavaScriptStep2,
+  JavaScriptStep3,
+  JavaScriptStep4,
+];
 const reactSteps = [ReactStep1, ReactStep2, ReactStep3];
 
 function TutorialPage({ tutorialType }) {
@@ -28,7 +34,6 @@ function TutorialPage({ tutorialType }) {
   const location = useLocation();
   const navigate = useNavigate();
 
-
   const handleStepChange = (change) => {
     const newStep = step + change;
     if (newStep >= 1 && newStep <= totalSteps) {
@@ -37,8 +42,9 @@ function TutorialPage({ tutorialType }) {
       const path =
         tutorialType === 'react'
           ? `/tutorial/react/step${newStep}`
-          : `/tutorial/step${newStep}`;
-          navigate(path);
+          : `/tutorial/javascript/step${newStep}`;
+
+      navigate(path);
     }
   };
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { CARD_CONTENTS } from '../pages/JsDoc';
-import '../assets.js/styles/Step1.css';
+import { CARD_CONTENTS } from '../../pages/JsDoc';
+import '../../assets.js/styles/Step1.css';
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/prism';
 

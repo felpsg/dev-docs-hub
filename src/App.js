@@ -10,6 +10,15 @@ import Sidebar from './components/Sidebar';
 import Chat from './components/Chat';
 import TutorialPage from './Tutorial/TutorialPage';
 
+import Step1 from './Tutorial/JavaScript/Step1';
+import Step2 from './Tutorial/JavaScript/Step2';
+import Step3 from './Tutorial/JavaScript/Step3';
+import Step4 from './Tutorial/JavaScript/Step4';
+
+import ReactStep1 from './Tutorial/React/Step1';
+import ReactStep2 from './Tutorial/React/Step2';
+import ReactStep3 from './Tutorial/React/Step3';
+
 function App() {
   return (
     <div className="content-container">
@@ -26,38 +35,23 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/chat" element={<Chat />} />
                 <Route path="/tutorial" element={<TutorialPage />} />
-                {/* Tutorial JavaScript inicio */}
                 <Route
-                  path="/tutorial/step1"
+                  path="/tutorial/javascript/*"
                   element={<TutorialPage tutorialType="javascript" />}
-                />
+                >
+                  <Route path="step1" element={<Step1 />} />
+                  <Route path="step2" element={<Step2 />} />
+                  <Route path="step3" element={<Step3 />} />
+                  <Route path="step4" element={<Step4 />} />
+                </Route>
                 <Route
-                  path="/tutorial/step2"
-                  element={<TutorialPage tutorialType="javascript" />}
-                />
-                <Route
-                  path="/tutorial/step3"
-                  element={<TutorialPage tutorialType="javascript" />}
-                />
-                <Route
-                  path="/tutorial/step4"
-                  element={<TutorialPage tutorialType="javascript" />}
-                />
-
-                {/* Tutorial React inicio */}
-                <Route
-                  path="/tutorial/react/step1"
+                  path="/tutorial/react/*"
                   element={<TutorialPage tutorialType="react" />}
-                />
-                <Route
-                  path="/tutorial/react/step2"
-                  element={<TutorialPage tutorialType="react" />}
-                />
-                <Route
-                  path="/tutorial/react/step3"
-                  element={<TutorialPage tutorialType="react" />}
-                />
-                {/* ... Outras rotas de tutorial */}
+                >
+                  <Route path="step1" element={<ReactStep1 />} />
+                  <Route path="step2" element={<ReactStep2 />} />
+                  <Route path="step3" element={<ReactStep3 />} />
+                </Route>
               </Routes>
             </div>
           </div>

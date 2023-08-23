@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setStep } from '../store/actions';
@@ -11,10 +11,10 @@ const links = [
     path: '/tutorial/javascript',
     label: 'JavaScript Tutorial',
     subLinks: [
-      { path: '/tutorial/step1', label: 'Inicio' },
-      { path: '/tutorial/step2', label: 'Introdução ao JavaScript' },
-      { path: '/tutorial/step3', label: 'Vantagens e Desvantagens' },
-      { path: '/tutorial/step4', label: 'Lógica de Programação' },
+      { path: '/tutorial/javascript/step1', label: 'Inicio' },
+      { path: '/tutorial/javascript/step2', label: 'Introdução ao javascript' },
+      { path: '/tutorial/javascript/step3', label: 'Vantagens e Desvantagens' },
+      { path: '/tutorial/javascript/step4', label: 'Lógica de Programação' },
     ],
   },
   {
@@ -26,22 +26,22 @@ const links = [
       { path: '/tutorial/react/step3', label: 'Vantagens e Desvantagens' },
     ],
   },
-
   { path: '/docs/vue', label: 'Vue' },
   { path: '/docs/bootstrap', label: 'Bootstrap' },
   { path: '/docs/tailwind', label: 'Tailwind' },
 ];
 
+const getStepFromPath = (path) => {
+  const match = path.match(/\/tutorial\/(?:javascript|react)\/step(\d+)/);
+  return match ? Number(match[1]) : null;
+};
+
 const SubMenu = ({ subLinks, location }) => (
   <ul className="sub-menu">
     {subLinks.map((subLink, index) => (
-      <li
-        key={index}
-        className={subLink.path === '/tutorial/step1' ? 'special-item' : ''}
-      >
+      <li key={index} className={subLink.path === '/tutorial/step1' ? 'special-item' : ''}>
         <Link
           to={subLink.path}
-          onClick={() => console.log('Navigating to', subLink.path)} // Log aqui
           className={`text-decoration-none ${
             location.pathname === subLink.path ? 'active-link' : ''
           }`}
@@ -55,31 +55,34 @@ const SubMenu = ({ subLinks, location }) => (
 
 const Sidebar = () => {
   const [openSubMenu, setOpenSubMenu] = useState(null);
+  const openSubMenuRef = useRef(openSubMenu);
+  openSubMenuRef.current = openSubMenu;
   const location = useLocation();
   const dispatch = useDispatch();
 
   const handleSubMenuToggle = (index, hasSubLinks) => {
-    console.log('Toggling submenu', index, hasSubLinks); // Log aqui
-    setOpenSubMenu(openSubMenu === index || !hasSubLinks ? null : index);
+    if (hasSubLinks) {
+      setOpenSubMenu(openSubMenu === index ? null : index);
+    }
+  };
+
+  const closeSubMenus = () => {
+    setOpenSubMenu(null);
   };
 
   useEffect(() => {
-    const stepFromPath = Number(
-      location.pathname.split('/tutorial/')[1]?.split('/step')[1] ||
-        location.pathname.split('/tutorial/react/')[1]?.split('/step')[1],
-    );
-    console.log('Step from path:', stepFromPath); // Log aqui
+    const stepFromPath = getStepFromPath(location.pathname);
     if (stepFromPath) {
       dispatch(setStep(stepFromPath));
     }
 
-    if (openSubMenu === null) {
+    if (openSubMenuRef.current === null) {
       const matchingLinkIndex = links.findIndex((link) =>
         location.pathname.startsWith(link.path),
       );
       setOpenSubMenu(matchingLinkIndex);
     }
-  }, [location.pathname, dispatch, openSubMenu]);
+  }, [location.pathname, dispatch]);
 
   return (
     <div className="col-md-3 sidebar">
@@ -98,6 +101,7 @@ const Sidebar = () => {
             ) : (
               <Link
                 to={link.path}
+                onClick={closeSubMenus} // Feche os submenus ao clicar em um link principal
                 className={`text-decoration-none ${
                   location.pathname.startsWith(link.path) ? 'active-link' : ''
                 }`}
