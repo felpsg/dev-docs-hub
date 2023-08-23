@@ -23,6 +23,7 @@ const links = [
     subLinks: [
       { path: '/tutorial/react/step1', label: 'Inicio' },
       { path: '/tutorial/react/step2', label: 'Introdução ao React' },
+      { path: '/tutorial/react/step3', label: 'Vantagens e Desvantagens' },
     ],
   },
 
@@ -40,6 +41,7 @@ const SubMenu = ({ subLinks, location }) => (
       >
         <Link
           to={subLink.path}
+          onClick={() => console.log('Navigating to', subLink.path)} // Log aqui
           className={`text-decoration-none ${
             location.pathname === subLink.path ? 'active-link' : ''
           }`}
@@ -57,6 +59,7 @@ const Sidebar = () => {
   const dispatch = useDispatch();
 
   const handleSubMenuToggle = (index, hasSubLinks) => {
+    console.log('Toggling submenu', index, hasSubLinks); // Log aqui
     setOpenSubMenu(openSubMenu === index || !hasSubLinks ? null : index);
   };
 
@@ -65,7 +68,7 @@ const Sidebar = () => {
       location.pathname.split('/tutorial/')[1]?.split('/step')[1] ||
         location.pathname.split('/tutorial/react/')[1]?.split('/step')[1],
     );
-
+    console.log('Step from path:', stepFromPath); // Log aqui
     if (stepFromPath) {
       dispatch(setStep(stepFromPath));
     }
