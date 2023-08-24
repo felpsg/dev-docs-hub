@@ -17,4 +17,7 @@ export const CSS_CARD_CONTENTS = [
     title: 'o que será aprendido?',
     text: ' React é uma biblioteca JavaScript para construir interfaces de usuário...felipeeeeeeeeeeeeeeeeeee',
   },
+  
 ];
+
+
