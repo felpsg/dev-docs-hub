@@ -2,6 +2,10 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setStep, setProgress } from '../store/actions';
 
+import CssStep1 from './Css/Step1';
+import CssStep2 from './Css/Step2';
+import CssStep3 from './Css/Step3';
+
 import JavaScriptStep1 from './JavaScript/Step1';
 import JavaScriptStep2 from './JavaScript/Step2';
 import JavaScriptStep3 from './JavaScript/Step3';
@@ -16,18 +20,31 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import ProgressBar from './ProgressBar';
 import NavigationButton from './NavigationButton';
 
+const cssSteps = [CssStep1, CssStep2, CssStep3];
 const javascriptSteps = [
   JavaScriptStep1,
   JavaScriptStep2,
   JavaScriptStep3,
   JavaScriptStep4,
 ];
-
 const reactSteps = [ReactStep1, ReactStep2, ReactStep3];
 
 function TutorialPage({ tutorialType }) {
-  const stepsComponents =
-    tutorialType === 'react' ? reactSteps : javascriptSteps;
+  let stepsComponents;
+  switch (tutorialType) {
+    case 'react':
+      stepsComponents = reactSteps;
+      break;
+    case 'javascript':
+      stepsComponents = javascriptSteps;
+      break;
+    case 'css':
+      stepsComponents = cssSteps;
+      break;
+    default:
+      stepsComponents = [];
+  }
+
   const totalSteps = stepsComponents.length;
   const dispatch = useDispatch();
   const tutorialState = useSelector((state) => state.tutorialReducer);
@@ -43,11 +60,7 @@ function TutorialPage({ tutorialType }) {
     if (newStep >= 1 && newStep <= totalSteps) {
       dispatch(setStep(newStep));
       dispatch(setProgress((newStep - 1) * (100 / (totalSteps - 1))));
-      const path =
-        tutorialType === 'react'
-          ? `/tutorial/react/step${newStep}`
-          : `/tutorial/javascript/step${newStep}`;
-
+      const path = `/tutorial/${tutorialType}/step${newStep}`;
       console.log('Navigating to:', path);
       navigate(path);
     }
@@ -65,7 +78,7 @@ function TutorialPage({ tutorialType }) {
   useEffect(() => {
     console.log('Scrolling to top');
     window.scrollTo(0, 0);
-  }, [location.pathname]); // Dependência da rota
+  }, [location.pathname]);
 
   return (
     <div>

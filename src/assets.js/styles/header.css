@@ -73,6 +73,10 @@
   margin-right: 15px;
 }
 
+.coffee-icon:hover {
+  transform: scale(1.1);
+}
+
 /* modal */
 .coffee-modal:focus {
   outline: none;
@@ -161,8 +165,8 @@
 }
 
 .close-button {
-  padding: 0 6px;
-  margin: 0 5px;
+  padding: 0 10px;
+  margin: 0 10px;
   border: none;
   background: #4a5568;
   color: white;

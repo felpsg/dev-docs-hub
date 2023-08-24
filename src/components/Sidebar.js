@@ -7,7 +7,7 @@ import SubMenu from './SubMenu';
 import links from './SidebarLinks';
 
 const getStepFromPath = (path) => {
-  const match = path.match(/\/tutorial\/(?:javascript|react)\/step(\d+)/);
+  const match = path.match(/\/tutorial\/(?:javascript|react|css)\/step(\d+)/);
   return match ? Number(match[1]) : null;
 };
 

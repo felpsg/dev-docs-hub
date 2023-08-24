@@ -10,6 +10,10 @@ import Sidebar from './components/Sidebar';
 import Chat from './components/Chat';
 import TutorialPage from './Tutorial/TutorialPage';
 
+import CssStep1 from './Tutorial/Css/Step1';  
+import CssStep2 from './Tutorial/Css/Step2';
+
+
 import JavaScriptStep1 from './Tutorial/JavaScript/Step1';
 import JavaScriptStep2 from './Tutorial/JavaScript/Step2';
 import JavaScriptStep3 from './Tutorial/JavaScript/Step3';
@@ -51,6 +55,11 @@ function App() {
                   <Route path="step1" element={<ReactStep1 />} />
                   <Route path="step2" element={<ReactStep2 />} />
                   <Route path="step3" element={<ReactStep3 />} />
+                </Route>
+
+                <Route path="/tutorial/css/*" element={<TutorialPage tutorialType="css" />}>
+                  <Route path="step1" element={<CssStep1 />} />
+                  <Route path="step2" element={<CssStep2 />} />
                 </Route>
               </Routes>
             </div>

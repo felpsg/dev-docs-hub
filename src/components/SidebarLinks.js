@@ -1,6 +1,18 @@
 const links = [
   { path: '/home', label: 'Home' },
   { path: '/chat', label: 'HubeGPT' },
+  { path: '/tutorial/vue', label: 'Vue' }, // Corrigido
+
+  {
+    path: '/tutorial/css',
+    label: 'CSS',
+    subLinks: [
+      { path: '/tutorial/css/step1', label: 'Inicio' },
+      { path: '/tutorial/css/step2', label: 'Introdução ao CSS' },
+      { path: '/tutorial/css/step3', label: 'Vantagens e Desvantagens' }, // Adicionado
+    ],
+  },
+
   {
     path: '/tutorial/javascript',
     label: 'JavaScript Tutorial',
@@ -11,6 +23,7 @@ const links = [
       { path: '/tutorial/javascript/step4', label: 'Lógica de Programação' },
     ],
   },
+
   {
     path: '/tutorial/react',
     label: 'React Tutorial',
@@ -20,9 +33,6 @@ const links = [
       { path: '/tutorial/react/step3', label: 'Vantagens e Desvantagens' },
     ],
   },
-  { path: '/docs/vue', label: 'Vue' },
-  { path: '/docs/bootstrap', label: 'Bootstrap' },
-  { path: '/docs/tailwind', label: 'Tailwind' },
 ];
 
 export default links;
