@@ -29,8 +29,10 @@ const javascriptSteps = [
 ];
 const reactSteps = [ReactStep1, ReactStep2, ReactStep3];
 
+// Função do componente da página do tutorial
 function TutorialPage({ tutorialType }) {
   let stepsComponents;
+  // Determina o conjunto de passos a ser usado com base no tipo de tutorial
   switch (tutorialType) {
     case 'react':
       stepsComponents = reactSteps;
@@ -45,15 +47,21 @@ function TutorialPage({ tutorialType }) {
       stepsComponents = [];
   }
 
+  // Número total de passos no tutorial selecionado
   const totalSteps = stepsComponents.length;
+
+  // Hooks do Redux para despachar ações e selecionar partes do estado
   const dispatch = useDispatch();
   const tutorialState = useSelector((state) => state.tutorialReducer);
   const { step, progress } = tutorialState;
+
+  // Hooks do react-router-dom para navegação e localização
   const location = useLocation();
   const navigate = useNavigate();
 
   console.log('Location Path:', location.pathname);
 
+  // Função para manipular a mudança de passos no tutorial
   const handleStepChange = (change) => {
     console.log('handleStepChange called');
     const newStep = step + change;
@@ -75,6 +83,7 @@ function TutorialPage({ tutorialType }) {
     console.log('Step from path:', stepFromPath);
   }, [location.pathname, dispatch, totalSteps, tutorialType]);
 
+  // Efeito para rolar a janela para o topo quando o caminho muda
   useEffect(() => {
     console.log('Scrolling to top');
     window.scrollTo(0, 0);
