@@ -1,5 +1,5 @@
 import React from 'react';
-import videoSource from '../assets.js/images/video.mp4'; // Importar o vídeo
+import videoSource from '../assets.js/images/video.mp4'; 
 import '../assets.js/styles/home.css';
 
 const Home = () => (

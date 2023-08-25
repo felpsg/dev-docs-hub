@@ -7,6 +7,8 @@ function ProgressBar({ progress }) {
   return (
     <div className="progress-container">
       <div className="progress-road">
+        <i className="bi bi-flag-fill milestone"></i>
+
         <div className="progress-bar" />
         <img
           src={carSvg}

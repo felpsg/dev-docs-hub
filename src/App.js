@@ -4,15 +4,13 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contacts'; // Corrigido o nome do arquivo
 import Sidebar from './components/Sidebar';
 import Chat from './components/Chat';
 import TutorialPage from './Tutorial/TutorialPage';
+import Footer from './components/Footer';
 
-import CssStep1 from './Tutorial/Css/Step1';  
+import CssStep1 from './Tutorial/Css/Step1';
 import CssStep2 from './Tutorial/Css/Step2';
-
 
 import JavaScriptStep1 from './Tutorial/JavaScript/Step1';
 import JavaScriptStep2 from './Tutorial/JavaScript/Step2';
@@ -35,8 +33,6 @@ function App() {
               <Routes>
                 <Route path="/" element={<Navigate to="/home" />} />
                 <Route path="/home" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
                 <Route path="/chat" element={<Chat />} />
                 <Route path="/tutorial" element={<TutorialPage />} />
                 <Route
@@ -57,13 +53,17 @@ function App() {
                   <Route path="step3" element={<ReactStep3 />} />
                 </Route>
 
-                <Route path="/tutorial/css/*" element={<TutorialPage tutorialType="css" />}>
+                <Route
+                  path="/tutorial/css/*"
+                  element={<TutorialPage tutorialType="css" />}
+                >
                   <Route path="step1" element={<CssStep1 />} />
                   <Route path="step2" element={<CssStep2 />} />
                 </Route>
               </Routes>
             </div>
           </div>
+          <Footer />
         </div>
       </Router>
     </div>

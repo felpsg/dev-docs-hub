@@ -12,7 +12,7 @@
   color: white;
   cursor: pointer;
   transition: background 0.3s ease;
-  margin-bottom: 2rem; /* Margem inferior para separar os botões da barra de progresso */
+  margin-bottom: 2rem;
 }
 
 .button-p:hover,
@@ -85,4 +85,31 @@
   transform: translate(-50%, -50%);
 }
 
+.milestone {
+  position: absolute;
+  top: 50%;
+  left: 98%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: #f8a244;
+  animation: wave 1s ease infinite alternate;
+}
 
+@keyframes wave {
+  0% {
+    transform: translate(-50%, -50%) rotate(-10deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(10deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .progress-container {
+    display: none;
+  }
+  .button-p,
+  .button-step {
+    margin-top: 15px;
+  }
+}

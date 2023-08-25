@@ -5,6 +5,7 @@
   overflow-y: auto;
   color: #fff; /* Cor do texto alterada para branco */
   border: none !important;
+  padding-left: 0 !important;
 }
 
 .list-group {
