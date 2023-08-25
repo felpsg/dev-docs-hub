@@ -38,19 +38,20 @@ Esta plataforma é destinada tanto para desenvolvedores iniciantes quanto para p
 Para instalar este projeto em sua máquina local, siga os seguintes passos:
 
 1. Clone o repositório:
-   \```
+
+   \`
    git clone <https://github.com/yourusername/dev-docs-hub.git>
-   \```
+   \`
 
 2. Instale as dependências:
-   \```
+   \`
    npm install
-   \```
+   \`
 
 3. Inicie o servidor de desenvolvimento:
-   \```
+   \`
    npm start
-   \```
+   \`
 
 ## Uso
 
