@@ -2,12 +2,11 @@ import React, { useState, useEffect } from 'react';
 import '../assets.js/styles/header.css';
 import rocketIcon from '../assets.js/images/rocket-icon1.png';
 import coffeeIcon from '../assets.js/images/coffe.png';
-import qrCodeImage from '../assets.js/images/qrcode.png'; // Ajuste o caminho para o local correto do arquivo
+import qrCodeImage from '../assets.js/images/qrcode.png';
 
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 
-// Certifique-se de definir o elemento raiz para o modal, geralmente o elemento com id='root'
 Modal.setAppElement('#root');
 
 const Header = () => {
@@ -73,9 +72,10 @@ const Header = () => {
 
           <p className="modal-message">
             <span className="aviso">Aviso de Desenvolvedor</span>: A cafeína
-            está em níveis críticos. Um café virtual previne bugs. Esse conteúdo é
-            gratuito para apoiar novos devs que estão entrando na área. Ajude-nos com um café! Sua doação
-            mantém nosso código fluindo e apoia a comunidade.
+            está em níveis críticos. Um café virtual previne bugs. Esse conteúdo
+            é gratuito para apoiar novos devs que estão entrando na área.
+            Ajude-nos com um café! Sua doação mantém nosso código fluindo e
+            apoia a comunidade.
           </p>
 
           <img src={qrCodeImage} alt="QR Code" className="qr-code-image" />

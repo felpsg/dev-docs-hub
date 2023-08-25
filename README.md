@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Dev-Docs-Hub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descrição
 
-## Available Scripts
+Dev-Docs-Hub é uma plataforma abrangente de aprendizado e referência de código, construída usando tecnologias modernas como React 18+. Projetada com uma arquitetura modular e responsiva, oferece uma interface de usuário interativa para explorar uma ampla variedade de conteúdo, incluindo:
 
-In the project directory, you can run:
+### Componentes
 
-### `npm start`
+- Elementos reutilizáveis, como cabeçalho, rodapé e barra lateral, construídos usando a biblioteca React.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Tutoriais
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Cursos interativos compostos por várias etapas, facilitando a aprendizagem de tópicos complexos como React, JavaScript, e CSS.
 
-### `npm test`
+### Páginas de Documentação
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Recursos detalhados que oferecem informações aprofundadas sobre diferentes tópicos, incluindo exemplos de código.
 
-### `npm run build`
+### Gerenciamento de Estado
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Implementado com Redux, permite uma gestão eficiente do estado da aplicação, garantindo uma experiência de usuário consistente.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Testes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Utilizando frameworks como Jest, a aplicação mantém uma alta cobertura de testes, garantindo confiabilidade e manutenção eficiente.
 
-### `npm run eject`
+Esta plataforma é destinada tanto para desenvolvedores iniciantes quanto para profissionais experientes, servindo como uma ferramenta completa de referência e aprendizado. A arquitetura limpa e os padrões de código adotados tornam a expansão e a contribuição do projeto uma tarefa eficiente e transparente.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Sumário
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [Instalação](#instalação)
+- [Uso](#uso)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Instalação
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Para instalar este projeto em sua máquina local, siga os seguintes passos:
 
-## Learn More
+1. Clone o repositório:
+   \```
+   git clone <https://github.com/yourusername/dev-docs-hub.git>
+   \```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Instale as dependências:
+   \```
+   npm install
+   \```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Inicie o servidor de desenvolvimento:
+   \```
+   npm start
+   \```
 
-### Code Splitting
+## Uso
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+O projeto é composto por várias páginas e componentes para guiar os usuários através de diferentes tecnologias de front-end. A navegação é feita através do react-router, e o estado é gerenciado pelo Redux.
 
-### Analyzing the Bundle Size
+## Contribuição
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Estamos abertos a contribuições! Por favor, leia o [Código de Conduta](CODE_OF_CONDUCT.md) antes de contribuir.
 
-### Making a Progressive Web App
+## Licença
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este projeto está licenciado sob a [Licença Creative Commons Atribuição-NãoComercial 4.0 Internacional](LICENSE.md). Você pode usar, distribuir e modificar o código, mas não pode usá-lo para fins lucrativos.

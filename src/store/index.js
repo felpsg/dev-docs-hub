@@ -1,13 +1,11 @@
-// src/store/index.js
-
 import { createStore } from 'redux';
-import { combineReducers } from 'redux'; // Importe combineReducers
+import { combineReducers } from 'redux'; 
 import tutorialReducer from './reducers';
 
 const rootReducer = combineReducers({
-  tutorialReducer: tutorialReducer, // Certifique-se de usar o nome correto do reducer
+  tutorialReducer: tutorialReducer, 
 });
 
-const store = createStore(rootReducer); // Use o rootReducer combinado
+const store = createStore(rootReducer); 
 
 export default store;
