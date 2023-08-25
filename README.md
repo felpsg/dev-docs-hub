@@ -63,4 +63,4 @@ Estamos abertos a contribuições! Por favor, leia o [Código de Conduta](CODE_O
 
 ## Licença
 
-Este projeto está licenciado sob a [Licença Creative Commons Atribuição-NãoComercial 4.0 Internacional](LICENSE.md). Você pode usar, distribuir e modificar o código, mas não pode usá-lo para fins lucrativos.
+Este projeto está licenciado sob a [Licença Creative Commons Atribuição-NãoComercial 4.0 Internacional](LICENSE.md). Você pode usar, distribuir e modificar o código, mas de maneira nenhuma você não pode usá-lo para fins lucrativos.
