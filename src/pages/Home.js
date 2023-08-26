@@ -10,18 +10,26 @@ const Home = () => (
       </video>
     </div>
     <h1 className="title">
-      Bem vindo ao<span> CodeHub</span>
+      Bem-vindo ao<span> DevDocsHub</span>
     </h1>
     <p>
-      Você encontrará documentações completas e atualizadas sobre
-      <br /> várias tecnologias front-end. Navegue por guias, tutoriais e
-      referências <br /> abrangentes.
+      O DevDocsHub oferece um acesso direto e interativo às <br />
+      documentações técnicas das principais linguagens e frameworks <br />
+      front-end. Mergulhe em:
+      <ul>
+        <li>Guias Práticos de HTML5, CSS3, JavaScript (ES6+)</li>
+        <li>Tutoriais de React, Angular, Vue.js</li>
+        <li>Exemplos de Código com Análise em Tempo Real</li>
+        <li>Comunidade Activa para Discussões e Suporte</li>
+      </ul>
+      Desenvolvido por e para profissionais, o DevDocsHub é sua <br />
+      ferramenta definitiva para aprendizagem, referência e <br />
+      colaboração em desenvolvimento front-end.
     </p>
     <div className="additional-section">
-      <h2>Explore Mais Tecnologias</h2>
+      <h2>Aprofunde-se nas Tecnologias Front-End</h2>
       <p>
-        Descubra mais sobre as linguagens de programação, frameworks e
-        bibliotecas mais recentes em nosso repositório.
+        O DevDocsHub não é apenas uma fonte de documentação; é um ambiente de aprendizagem que promove o entendimento prático e a experimentação. Com exemplos detalhados, quizzes e desafios, tornamos o aprendizado técnico acessível e envolvente. Explore, aprenda e cresça com o DevDocsHub.
       </p>
     </div>
   </div>
