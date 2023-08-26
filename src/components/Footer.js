@@ -1,11 +1,25 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom'; // Importe o useLocation
+import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import '../assets.js/styles/footer.css';
+import coffeeIcon from '../assets.js/images/coffe.png';
+import qrCodeImage from '../assets.js/images/qrcode.png';
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
 
 const Footer = () => {
-  const location = useLocation(); // Use o Hook useLocation
+  const location = useLocation();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  // Se a localização não for a página inicial, retorne null
+  const iconStyle = {
+    fontSize: '24px',
+    color: '#F8A244',
+    marginLeft: '10px',
+  };
+
+  const openModal = () => setModalIsOpen(true);
+  const closeModal = () => setModalIsOpen(false);
+
   if (location.pathname !== '/home') {
     return null;
   }
@@ -22,22 +36,50 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <i
-            className="bi bi-github"
-            style={{ fontSize: '24px', color: '#F8A244' }}
-          ></i>
+          <i className="bi bi-github" style={iconStyle}></i>
         </a>
         <a
           href="https://www.linkedin.com/in/felipetec/"
           target="_blank"
           rel="noreferrer"
         >
-          <i
-            className="bi bi-linkedin"
-            style={{ fontSize: '24px', color: '#F8A244', marginLeft: '10px' }}
-          ></i>
+          <i className="bi bi-linkedin" style={iconStyle}></i>
         </a>
+        <i
+          className="bi bi-cup-straw"
+          style={iconStyle}
+          onClick={openModal}
+        ></i>
       </div>
+      <Modal
+        isOpen={modalIsOpen}
+        contentLabel="Coffee Modal"
+        className="coffee-modal border-0"
+        overlayClassName="overlay"
+        shouldCloseOnOverlayClick={false}
+      >
+        <div className="modal-header text-center">
+          <h2 className="modal-title w-100">Erro 404: Café não Encontrado!</h2>
+        </div>
+        <div className="coffee-icon-container">
+          <img
+            src={coffeeIcon}
+            alt="Coffee Icon"
+            className="modal-coffee-icon"
+          />
+          <p className="modal-message">
+            <span className="aviso">Aviso de Desenvolvedor</span>: A cafeína
+            está em níveis críticos. Um café virtual previne bugs. Esse conteúdo
+            é gratuito para apoiar novos devs que estão entrando na área.
+            Ajude-nos com um café! Sua doação mantém nosso código fluindo e
+            apoia a comunidade.
+          </p>
+          <img src={qrCodeImage} alt="QR Code" className="qr-code-image" />
+          <button className="close-button" onClick={closeModal}>
+            X
+          </button>
+        </div>
+      </Modal>
     </footer>
   );
 };
