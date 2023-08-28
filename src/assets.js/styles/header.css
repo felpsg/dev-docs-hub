@@ -40,29 +40,32 @@
   animation: rocketAnimation 2s infinite;
 }
 
-
 .menu-container {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   width: 100%;
 }
 
 .left-container,
 .right-container {
-  position: absolute; 
-  top: 50%; 
+  position: absolute;
+  top: 50%;
   transform: translateY(-50%);
 }
 
 .left-container {
-  left: 2%; 
+  left: 2%;
 }
 
 .right-container {
-  right: 2%; 
+  right: 2%;
 }
 
 .right-container button:first-child {
-  margin-right: 10px; 
+  margin-right: 10px;
+}
+
+.custom-border {
+  border: solid 1px #f39c12 !important;
 }
