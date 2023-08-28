@@ -40,29 +40,29 @@
   animation: rocketAnimation 2s infinite;
 }
 
+
 .menu-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; 
   align-items: center;
   width: 100%;
 }
 
-.left-container {
-  flex-grow: 1;
+.left-container,
+.right-container {
+  position: absolute; 
+  top: 50%; 
+  transform: translateY(-50%);
 }
 
-.logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+.left-container {
+  left: 2%; 
 }
 
 .right-container {
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
-  justify-content: flex-end; /* Alinha o ícone do café à direita */
+  right: 2%; 
 }
 
-
+.right-container button:first-child {
+  margin-right: 10px; 
+}

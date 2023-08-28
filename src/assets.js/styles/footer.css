@@ -118,7 +118,7 @@
   padding: 20px;
 }
 
-.modal-title {
+.title-coffe {
   font-size: 24px;
   font-weight: bold;
   animation: blinkText 1.5s infinite;
@@ -198,3 +198,10 @@
 .aviso {
   border-bottom: 2px solid #333;
 }
+
+input:focus {
+  outline: none !important;
+  box-shadow: none !important; 
+  border: solid 1px #FFCC07 !important;
+}
+

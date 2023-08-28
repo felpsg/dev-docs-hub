@@ -8,7 +8,6 @@ const Header = () => {
     <header>
       <nav className="navbar">
         <div className="menu-container">
-          <div className="left-container"></div>
           <div className="logo-container">
             <Link to="/" id="logo" className="navbar-brand">
               CodeHub
@@ -16,10 +15,69 @@ const Header = () => {
             </Link>
           </div>
           <div className="right-container">
-            {/* Coffee Icon Removed */}
+            <button type="button" className="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#loginModal">
+              Login
+            </button>
+            <button type="button" className="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#signupModal">
+              Cadastro
+            </button>
           </div>
         </div>
       </nav>
+
+      {/* Modal Login */}
+      <div className="modal fade" id="loginModal" tabIndex="-1">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title">Login</h5>
+              <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div className="modal-body">
+              <form>
+                <div className="mb-3">
+                  <label className="form-label">Email</label>
+                  <input type="email" className="form-control" placeholder="Seu email" />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Senha</label>
+                  <input type="password" className="form-control" placeholder="Sua senha" />
+                </div>
+                <button type="submit" className="btn btn-outline-success">Entrar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Modal Cadastro */}
+      <div className="modal fade" id="signupModal" tabIndex="-1">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title">Cadastro</h5>
+              <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div className="modal-body">
+              <form>
+                <div className="mb-3">
+                  <label className="form-label">Nome</label>
+                  <input type="text" className="form-control" placeholder="Seu nome" />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Email</label>
+                  <input type="email" className="form-control" placeholder="Seu email" />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Senha</label>
+                  <input type="password" className="form-control" placeholder="Sua senha" />
+                </div>
+                <button type="submit" className="btn btn-outline-secondary">Cadastrar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
   );
 };

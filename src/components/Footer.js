@@ -59,7 +59,9 @@ const Footer = () => {
         shouldCloseOnOverlayClick={false}
       >
         <div className="modal-header text-center">
-          <h2 className="modal-title w-100">Erro 404: Café não Encontrado!</h2>
+          <h2 className="modal-title w-100 title-coffe">
+            Erro 404: Café não Encontrado!
+          </h2>
         </div>
         <div className="coffee-icon-container">
           <img
