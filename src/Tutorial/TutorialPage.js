@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { setStep, setProgress } from '../store/actions';
 
@@ -31,8 +32,9 @@ const reactSteps = [ReactStep1, ReactStep2, ReactStep3];
 
 // Função do componente da página do tutorial
 function TutorialPage({ tutorialType }) {
+  const tutorialStartRef = useRef(null);
   let stepsComponents;
-  // Determina o conjunto de passos a ser usado com base no tipo de tutorial
+
   switch (tutorialType) {
     case 'react':
       stepsComponents = reactSteps;
@@ -47,29 +49,21 @@ function TutorialPage({ tutorialType }) {
       stepsComponents = [];
   }
 
-  // Número total de passos no tutorial selecionado
   const totalSteps = stepsComponents.length;
 
-  // Hooks do Redux para despachar ações e selecionar partes do estado
   const dispatch = useDispatch();
   const tutorialState = useSelector((state) => state.tutorialReducer);
   const { step, progress } = tutorialState;
 
-  // Hooks do react-router-dom para navegação e localização
   const location = useLocation();
   const navigate = useNavigate();
 
-  console.log('Location Path:', location.pathname);
-
-  // Função para manipular a mudança de passos no tutorial
   const handleStepChange = (change) => {
-    console.log('handleStepChange called');
     const newStep = step + change;
     if (newStep >= 1 && newStep <= totalSteps) {
       dispatch(setStep(newStep));
       dispatch(setProgress((newStep - 1) * (100 / (totalSteps - 1))));
       const path = `/tutorial/${tutorialType}/step${newStep}`;
-      console.log('Navigating to:', path);
       navigate(path);
     }
   };
@@ -79,19 +73,23 @@ function TutorialPage({ tutorialType }) {
       Number(location.pathname.split(`/tutorial/${tutorialType}/step`)[1]) || 1;
     dispatch(setStep(stepFromPath));
     dispatch(setProgress((stepFromPath - 1) * (100 / (totalSteps - 1))));
-
-    console.log('Step from path:', stepFromPath);
   }, [location.pathname, dispatch, totalSteps, tutorialType]);
 
-  // Efeito para rolar a janela para o topo quando o caminho muda
   useEffect(() => {
-    console.log('Scrolling to top');
-    window.scrollTo(0, 0);
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile) {
+      if (tutorialStartRef.current) {
+        tutorialStartRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      console.log('Scrolling to top');
+      window.scrollTo(0, 0);
+    }
   }, [location.pathname]);
 
   return (
-    <div>
-      {console.log('Rendering step:', step)}
+    <div ref={tutorialStartRef}>
       {React.createElement(stepsComponents[step - 1], {
         step,
         totalSteps,

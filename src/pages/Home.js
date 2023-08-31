@@ -1,5 +1,5 @@
 import React from 'react';
-import videoSource from '../assets.js/images/video.mp4'; 
+import videoSource from '../assets.js/images/video.mp4';
 import '../assets.js/styles/home.css';
 
 const Home = () => (
@@ -22,14 +22,14 @@ const Home = () => (
         <li>Exemplos de Código com Análise em Tempo Real</li>
         <li>Comunidade Activa para Discussões e Suporte</li>
       </ul>
-      Desenvolvido por e para profissionais, o DevDocsHub é sua <br />
-      ferramenta definitiva para aprendizagem, referência e <br />
-      colaboração em desenvolvimento front-end.
     </p>
     <div className="additional-section">
       <h2>Aprofunde-se nas Tecnologias Front-End</h2>
       <p>
-        O DevDocsHub não é apenas uma fonte de documentação; é um ambiente de aprendizagem que promove o entendimento prático e a experimentação. Com exemplos detalhados, quizzes e desafios, tornamos o aprendizado técnico acessível e envolvente. Explore, aprenda e cresça com o DevDocsHub.
+        O DevDocsHub não é apenas uma fonte de documentação; é um ambiente de
+        aprendizagem que promove o entendimento prático e a experimentação. Com
+        exemplos detalhados, quizzes e desafios, tornamos o aprendizado técnico
+        acessível e envolvente. Explore, aprenda e cresça com o DevDocsHub.
       </p>
     </div>
   </div>

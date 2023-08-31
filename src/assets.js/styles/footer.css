@@ -1,13 +1,12 @@
 .footer {
   background-color: #181a1b;
   color: #f8a244;
-  position: relative;
+  position: fixed;
   bottom: 0;
   width: 100%;
   padding: 10px 0;
   display: flex;
   justify-content: center;
-  align-items: center;
   left: 0;
 }
 
@@ -74,6 +73,8 @@
     flex-direction: column;
     position: relative;
     margin: 20px 0;
+    border-top: 2px solid #f8a244;
+    padding-top: 15px;
   }
 
   .footer-content {
@@ -201,7 +202,6 @@
 
 input:focus {
   outline: none !important;
-  box-shadow: none !important; 
-  border: solid 1px #FFCC07 !important;
+  box-shadow: none !important;
+  border: solid 1px #ffcc07 !important;
 }
-

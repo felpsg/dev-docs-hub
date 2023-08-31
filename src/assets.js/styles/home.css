@@ -4,10 +4,13 @@ p {
   line-height: 1.5;
 }
 
+.home p {
+  font-size: 20px !important;
+}
+
 .home {
   margin-left: 20%;
   margin-top: 25px;
-  max-width: 800px;
 }
 
 .home span {
@@ -57,5 +60,6 @@ p {
   .additional-section h2,
   p {
     padding-top: 2rem;
+    font-size: 17px;
   }
 }
