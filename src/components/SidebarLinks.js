@@ -1,7 +1,7 @@
 const links = [
   { path: '/home', label: 'Home' },
   { path: '/chat', label: 'HubeGPT' },
-  { path: '/tutorial/vue', label: 'Vue' }, // Corrigido
+  { path: '/tutorial/vue', label: 'Vue' }, 
 
   {
     path: '/tutorial/css',
@@ -9,7 +9,7 @@ const links = [
     subLinks: [
       { path: '/tutorial/css/step1', label: 'Inicio' },
       { path: '/tutorial/css/step2', label: 'Introdução ao CSS' },
-      { path: '/tutorial/css/step3', label: 'Vantagens e Desvantagens' }, // Adicionado
+      { path: '/tutorial/css/step3', label: 'Vantagens e Desvantagens' }, 
     ],
   },
 

@@ -15,6 +15,15 @@ const SubMenu = ({ subLinks, location }) => (
           }`}
         >
           {subLink.label}
+          {location.pathname === subLink.path && (
+            <span
+              className={`tutorial-indicator ${
+                location.pathname.split('/')[2]
+              }`}
+            >
+              <i className="bi bi-check"></i>
+            </span>
+          )}
         </Link>
       </li>
     ))}

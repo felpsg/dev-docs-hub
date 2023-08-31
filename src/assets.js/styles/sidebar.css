@@ -57,3 +57,10 @@
   border-top: none !important;
   border-bottom: solid 1px #fff !important;
 }
+
+.tutorial-indicator {
+  margin-left: 3rem;
+  font-size: 1rem;
+}
+
+
