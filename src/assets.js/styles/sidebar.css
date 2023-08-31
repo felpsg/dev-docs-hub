@@ -3,7 +3,7 @@
   height: 100%;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
-  color: #fff; /* Cor do texto alterada para branco */
+  color: #fff; 
   border: none !important;
   padding-left: 0 !important;
 }
@@ -25,7 +25,7 @@
 }
 
 .list-group-item:hover {
-  background-color: #222; /* Cor de fundo sutil ao passar o mouse */
+  background-color: #222; 
 }
 
 .active-link {

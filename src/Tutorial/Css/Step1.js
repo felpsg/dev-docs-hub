@@ -1,7 +1,5 @@
 import React from 'react';
 import { CSS_CARD_CONTENTS } from '../../pages/cssDoc';
-
-
 import '../../assets.js/styles/Step1.css';
 
 function CssStep1() {
