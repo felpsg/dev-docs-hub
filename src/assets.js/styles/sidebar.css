@@ -3,7 +3,7 @@
   height: 100%;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
-  color: #fff; 
+  color: #fff;
   border: none !important;
   padding-left: 0 !important;
 }
@@ -25,7 +25,7 @@
 }
 
 .list-group-item:hover {
-  background-color: #222; 
+  background-color: #222;
 }
 
 .active-link {
@@ -63,4 +63,7 @@
   font-size: 1rem;
 }
 
-
+.bi-check {
+  color: #00ccff;
+  font-size: 1.1rem;
+}

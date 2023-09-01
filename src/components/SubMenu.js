@@ -21,7 +21,8 @@ const SubMenu = ({ subLinks, location }) => (
                 location.pathname.split('/')[2]
               }`}
             >
-              <i className="bi bi-check"></i>
+            <i className={`bi bi-check ${location.pathname === subLink.path ? 'animate-once' : ''}`}></i>
+
             </span>
           )}
         </Link>
