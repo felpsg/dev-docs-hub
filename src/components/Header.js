@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets.js/styles/header.css';
 import rocketIcon from '../assets.js/images/rocket-icon1.png';
 
 const Header = () => {
+  const [isActive, setIsActive] = useState(false);
+
+  const handleToggle = () => {
+    setIsActive(!isActive);
+  };
+
   return (
     <header>
       <nav className="navbar">
@@ -14,6 +20,34 @@ const Header = () => {
               <img src={rocketIcon} alt="Rocket Icon" className="rocket-icon" />
             </Link>
           </div>
+          <div className="hamburger-container">
+            <button
+              className={`navbar-toggler ${isActive ? 'active' : ''}`}
+              type="button"
+              onClick={handleToggle}
+            >
+              <span
+                className={`navbar-toggler-icon ${isActive ? 'active' : ''}`}
+              ></span>
+            </button>
+          </div>
+        </div>
+        <div className={`collapse ${isActive ? 'show' : ''}`}>
+          <button className="close-button" onClick={handleToggle}>
+            X
+          </button>
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link className="nav-link" to="./components/chat" onClick={handleToggle}>
+                <i className="bi bi-person"></i> Login
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/cadastro" onClick={handleToggle}>
+                <i className="bi bi-person-plus"></i> Cadastro
+              </Link>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
