@@ -62,7 +62,7 @@ Dev-Docs-Hub é uma plataforma de aprendizado e referência de código construí
 ## Utilização
 
 Dev-Docs-Hub é composto por diversos componentes e páginas para guiar os usuários por várias tecnologias de front-end. O estado da aplicação é gerenciado pelo Redux.
-bash
+
 
 # Para construir o projeto
 
