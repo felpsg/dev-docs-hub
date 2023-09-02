@@ -38,23 +38,24 @@ Dev-Docs-Hub é uma plataforma de aprendizado e referência de código construí
 ---
 
 ## Instalação
-bash
+
+- bash
 
 # Clone o repositório
 
-git clone <https://github.com/felpsg/dev-docs-hub.git>
+- git clone <https://github.com/felpsg/dev-docs-hub.git>
 
 # Entre no diretório
 
-cd dev-docs-hub
+- cd dev-docs-hub
 
 # Instale as dependências
 
-npm install
+- npm install
 
 # Inicie o servidor de desenvolvimento
 
-npm start
+- npm start
 
 ---
 
@@ -65,11 +66,11 @@ bash
 
 # Para construir o projeto
 
-npm run build
+- npm run build
 
 # Para executar os testes
 
-npm test
+- npm test
 
 ---
 
