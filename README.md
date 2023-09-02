@@ -1,66 +1,86 @@
 # Dev-Docs-Hub
 
-## Descrição
+## Índice
 
-Dev-Docs-Hub é uma plataforma abrangente de aprendizado e referência de código, construída usando tecnologias modernas como React 18+. Projetada com uma arquitetura modular e responsiva, oferece uma interface de usuário interativa para explorar uma ampla variedade de conteúdo, incluindo:
+1. [Visão Geral](#visão-geral)
+2. [Arquitetura](#arquitetura)
+3. [Pré-requisitos](#pré-requisitos)
+4. [Instalação](#instalação)
+5. [Utilização](#utilização)
+6. [Testes](#testes)
+7. [Contribuição](#contribuição)
+8. [Licença](#licença)
 
-### Componentes
+---
 
-- Elementos reutilizáveis, como cabeçalho, rodapé e barra lateral, construídos usando a biblioteca React.
+## Visão Geral
 
-### Tutoriais
+Dev-Docs-Hub é uma plataforma de aprendizado e referência de código construída com React 18+ e Redux. Serve tanto para desenvolvedores iniciantes quanto experientes e oferece uma interface de usuário interativa para explorar diversos tópicos.
 
-- Cursos interativos compostos por várias etapas, facilitando a aprendizagem de tópicos complexos como React, JavaScript, e CSS.
+---
 
-### Páginas de Documentação
+## Arquitetura
 
-- Recursos detalhados que oferecem informações aprofundadas sobre diferentes tópicos, incluindo exemplos de código.
+- **Frontend**: React 18+
+- **Gerenciamento de Estado**: Redux
+- **Roteamento**: React Router
+- **Testes**: Jest
+- **Padrões de Código**: ESLint, Prettier
+- **Empacotador de Módulos**: Webpack
 
-### Gerenciamento de Estado
+---
 
-- Implementado com Redux, permite uma gestão eficiente do estado da aplicação, garantindo uma experiência de usuário consistente.
+## Pré-requisitos
 
-### Testes
+- Node.js >= 14.x
+- npm >= 6.x
 
-- Utilizando frameworks como Jest, a aplicação mantém uma alta cobertura de testes, garantindo confiabilidade e manutenção eficiente.
-
-Esta plataforma é destinada tanto para desenvolvedores iniciantes quanto para profissionais experientes, servindo como uma ferramenta completa de referência e aprendizado. A arquitetura limpa e os padrões de código adotados tornam a expansão e a contribuição do projeto uma tarefa eficiente e transparente.
-
-## Sumário
-
-- [Instalação](#instalação)
-- [Uso](#uso)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
+---
 
 ## Instalação
 
-Para instalar este projeto em sua máquina local, siga os seguintes passos:
+\`\`\`bash
 
-1. Clone o repositório:
+# Clone o repositório
 
-   \"
-   git clone <https://github.com/felpsg/dev-docs-hub.git>
-   \"
+git clone <https://github.com/felpsg/dev-docs-hub.git>
 
-2. Instale as dependências:
-   \"
-   npm install
-   \"
+# Entre no diretório
 
-3. Inicie o servidor de desenvolvimento:
-   \"
-   npm start
-   \"
+cd dev-docs-hub
 
-## Uso
+# Instale as dependências
 
-O projeto é composto por várias páginas e componentes para guiar os usuários através de diferentes tecnologias de front-end. A navegação é feita através do react-router, e o estado é gerenciado pelo Redux.
+npm install
+
+# Inicie o servidor de desenvolvimento
+
+npm start
+\`\`\`
+
+---
+
+## Utilização
+
+Dev-Docs-Hub é composto por diversos componentes e páginas para guiar os usuários por várias tecnologias de front-end. O estado da aplicação é gerenciado pelo Redux.
+
+\`\`\`bash
+
+# Para construir o projeto
+
+npm run build
+
+# Para executar os testes
+
+npm test
+\`\`\`
+
+---
 
 ## Contribuição
 
-Estamos abertos a contribuições! Por favor, leia o [Código de Conduta](CODE_OF_CONDUCT.md) antes de contribuir.
+Contribuições são bem-vindas! Leia nosso código de conduta e guia de contribuição antes de enviar um pull request ou abrir uma issue.
 
 ## Licença
 
-Este projeto está licenciado sob a [Licença Creative Commons Atribuição-NãoComercial 4.0 Internacional](LICENSE.md). Você pode usar, distribuir e modificar o código, mas de maneira nenhuma você não pode usá-lo para fins lucrativos.
+Este projeto está licenciado sob a Licença Creative Commons Atribuição-NãoComercial 4.0 Internacional.
