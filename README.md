@@ -38,8 +38,7 @@ Dev-Docs-Hub é uma plataforma de aprendizado e referência de código construí
 ---
 
 ## Instalação
-
-\`\`\`bash
+bash
 
 # Clone o repositório
 
@@ -56,15 +55,13 @@ npm install
 # Inicie o servidor de desenvolvimento
 
 npm start
-\`\`\`
 
 ---
 
 ## Utilização
 
 Dev-Docs-Hub é composto por diversos componentes e páginas para guiar os usuários por várias tecnologias de front-end. O estado da aplicação é gerenciado pelo Redux.
-
-\`\`\`bash
+bash
 
 # Para construir o projeto
 
@@ -73,14 +70,13 @@ npm run build
 # Para executar os testes
 
 npm test
-\`\`\`
 
 ---
 
 ## Contribuição
 
-Contribuições são bem-vindas! Leia nosso código de conduta e guia de contribuição antes de enviar um pull request ou abrir uma issue.
+Estamos abertos a contribuições! Por favor, leia o [Código de Conduta](CODE_OF_CONDUCT.md) antes de enviar um pull request ou abrir uma issue.
 
 ## Licença
 
-Este projeto está licenciado sob a Licença Creative Commons Atribuição-NãoComercial 4.0 Internacional.
+Este projeto está licenciado sob a [Licença Creative Commons Atribuição-NãoComercial 4.0 Internacional](LICENSE.md). Você pode usar, distribuir e modificar o código, mas de maneira nenhuma você não pode usá-lo para fins lucrativos.
