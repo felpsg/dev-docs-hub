@@ -8,8 +8,24 @@ if (process.env.NODE_ENV !== 'test') {
   Modal.setAppElement('#root');
 }
 
-const GITHUB_LINK = "https://github.com/felpsg/dev-docs-hub";
-const LINKEDIN_LINK = "https://www.linkedin.com/in/felipetec/";
+const socialIcons = [
+  {
+    href: 'https://github.com/felpsg/dev-docs-hub',
+    className: 'bi bi-github icon',
+  },
+  {
+    href: 'https://www.linkedin.com/in/felipetec/',
+    className: 'bi bi-linkedin icon',
+  },
+];
+
+const modalProps = {
+  contentLabel: 'Coffee Modal',
+  className: 'coffee-modal border-0',
+  overlayClassName: 'overlay',
+  shouldCloseOnOverlayClick: false,
+  ariaHideApp: false,
+};
 
 const Footer = () => {
   const location = useLocation();
@@ -29,26 +45,18 @@ const Footer = () => {
         <p className="footer-text">Tecnologia para o futuro.</p>
       </div>
       <div className="footer-social">
-        <a href={GITHUB_LINK} target="_blank" rel="noreferrer">
-          <i className="bi bi-github icon"></i>
-        </a>
-        <a href={LINKEDIN_LINK} target="_blank" rel="noreferrer">
-          <i className="bi bi-linkedin icon"></i>
-        </a>
+        {socialIcons.map((icon, index) => (
+          <a key={index} href={icon.href} target="_blank" rel="noreferrer">
+            <i className={icon.className}></i>
+          </a>
+        ))}
         <i
           data-testid="open-modal-icon"
           className="bi bi-cup-straw icon"
           onClick={openModal}
         ></i>
       </div>
-      <Modal
-        isOpen={modalIsOpen}
-        contentLabel="Coffee Modal"
-        className="coffee-modal border-0"
-        overlayClassName="overlay"
-        shouldCloseOnOverlayClick={false}
-        ariaHideApp={false}
-      >
+      <Modal isOpen={modalIsOpen} {...modalProps}>
         <CoffeeModalContent closeModal={closeModal} />
       </Modal>
     </footer>
