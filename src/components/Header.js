@@ -11,13 +11,18 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <header data-testid="header">
       <nav className="navbar">
         <div className="menu-container">
           <div className="logo-container">
             <Link to="/" id="logo" className="navbar-brand">
               CodeHub
-              <img src={rocketIcon} alt="Rocket Icon" className="rocket-icon" />
+              <img
+                src={rocketIcon}
+                alt="Rocket Icon"
+                className="rocket-icon"
+                data-testid="logo"
+              />
             </Link>
           </div>
           <div className="hamburger-container">
@@ -25,6 +30,7 @@ const Header = () => {
               className={`navbar-toggler ${isActive ? 'active' : ''}`}
               type="button"
               onClick={handleToggle}
+              aria-label="toggle navigation"
             >
               <span
                 className={`navbar-toggler-icon ${isActive ? 'active' : ''}`}
@@ -32,13 +38,24 @@ const Header = () => {
             </button>
           </div>
         </div>
-        <div className={`collapse ${isActive ? 'show' : ''}`}>
-          <button className="close-button" onClick={handleToggle}>
+        <div
+          className={`collapse ${isActive ? 'show' : ''}`}
+          data-testid="menu"
+        >
+          <button
+            className="close-button"
+            onClick={handleToggle}
+            aria-label="close"
+          >
             X
           </button>
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="./components/chat" onClick={handleToggle}>
+              <Link
+                className="nav-link"
+                to="./components/chat"
+                onClick={handleToggle}
+              >
                 <i className="bi bi-person"></i> Login
               </Link>
             </li>
