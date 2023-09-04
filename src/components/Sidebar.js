@@ -19,17 +19,22 @@ const Sidebar = () => {
   const dispatch = useDispatch();
 
   const handleSubMenuToggle = (index, hasSubLinks) => {
+    closeSubMenus(); // Feche todos os submenus
     if (hasSubLinks) {
+      console.log(`Toggling submenu at index ${index}`);
       setOpenSubMenu(openSubMenu === index ? null : index);
     }
   };
 
   const closeSubMenus = () => {
+    console.log('Closing submenus');
     setOpenSubMenu(null);
   };
 
   useEffect(() => {
+    console.log(`Current path: ${location.pathname}`);
     const stepFromPath = getStepFromPath(location.pathname);
+    console.log(`Step from path: ${stepFromPath}`);
     if (stepFromPath) {
       dispatch(setStep(stepFromPath));
     }
@@ -38,6 +43,7 @@ const Sidebar = () => {
       const matchingLinkIndex = links.findIndex((link) =>
         location.pathname.startsWith(link.path),
       );
+      console.log(`Matching link index: ${matchingLinkIndex}`);
       setOpenSubMenu(matchingLinkIndex);
     }
   }, [location.pathname, dispatch]);
@@ -67,6 +73,7 @@ const Sidebar = () => {
                 {link.label}
               </Link>
             )}
+
             {openSubMenu === index && link.subLinks && (
               <SubMenu subLinks={link.subLinks} location={location} />
             )}

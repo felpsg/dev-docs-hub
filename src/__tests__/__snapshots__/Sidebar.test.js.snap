@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="col-md-3 sidebar"
+  >
+    <ul
+      class="list-group"
+    >
+      <li
+        class="list-group-item"
+      >
+        <a
+          class="text-decoration-none "
+          href="/home"
+        >
+          Home
+        </a>
+      </li>
+      <li
+        class="list-group-item"
+      >
+        <a
+          class="text-decoration-none "
+          href="/chat"
+        >
+          HubeGPT
+        </a>
+      </li>
+      <li
+        class="list-group-item"
+      >
+        <a
+          class="text-decoration-none "
+          href="/tutorial/vue"
+        >
+          Vue
+        </a>
+      </li>
+      <li
+        class="list-group-item"
+      >
+        <div
+          class="text-decoration-none "
+        >
+          CSS
+        </div>
+      </li>
+      <li
+        class="list-group-item"
+      >
+        <div
+          class="text-decoration-none "
+        >
+          JavaScript Tutorial
+        </div>
+      </li>
+      <li
+        class="list-group-item"
+      >
+        <div
+          class="text-decoration-none "
+        >
+          React Tutorial
+        </div>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
