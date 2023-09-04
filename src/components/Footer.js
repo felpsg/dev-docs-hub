@@ -1,23 +1,19 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import '../assets.js/styles/footer.css';
-import coffeeIcon from '../assets.js/images/coffe.png';
-import qrCodeImage from '../assets.js/images/qrcode.png';
 import Modal from 'react-modal';
+import CoffeeModalContent from './CoffeeModalContent';
 
 if (process.env.NODE_ENV !== 'test') {
   Modal.setAppElement('#root');
 }
 
+const GITHUB_LINK = "https://github.com/felpsg/dev-docs-hub";
+const LINKEDIN_LINK = "https://www.linkedin.com/in/felipetec/";
+
 const Footer = () => {
   const location = useLocation();
   const [modalIsOpen, setModalIsOpen] = useState(false);
-
-  const iconStyle = {
-    fontSize: '24px',
-    color: '#F8A244',
-    marginLeft: '10px',
-  };
 
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
@@ -33,24 +29,15 @@ const Footer = () => {
         <p className="footer-text">Tecnologia para o futuro.</p>
       </div>
       <div className="footer-social">
-        <a
-          href="https://github.com/felpsg/dev-docs-hub"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <i className="bi bi-github" style={iconStyle}></i>
+        <a href={GITHUB_LINK} target="_blank" rel="noreferrer">
+          <i className="bi bi-github icon"></i>
         </a>
-        <a
-          href="https://www.linkedin.com/in/felipetec/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <i className="bi bi-linkedin" style={iconStyle}></i>
+        <a href={LINKEDIN_LINK} target="_blank" rel="noreferrer">
+          <i className="bi bi-linkedin icon"></i>
         </a>
         <i
           data-testid="open-modal-icon"
-          className="bi bi-cup-straw"
-          style={iconStyle}
+          className="bi bi-cup-straw icon"
           onClick={openModal}
         ></i>
       </div>
@@ -62,29 +49,7 @@ const Footer = () => {
         shouldCloseOnOverlayClick={false}
         ariaHideApp={false}
       >
-        <div className="modal-header text-center">
-          <h2 className="modal-title w-100 title-coffe">
-            Erro 404: Café não Encontrado!
-          </h2>
-        </div>
-        <div className="coffee-icon-container">
-          <img
-            src={coffeeIcon}
-            alt="Coffee Icon"
-            className="modal-coffee-icon"
-          />
-          <p className="modal-message">
-            <span className="aviso">Aviso de Desenvolvedor</span>: A cafeína
-            está em níveis críticos. Um café virtual previne bugs. Esse conteúdo
-            é gratuito para apoiar novos devs que estão entrando na área.
-            Ajude-nos com um café! Sua doação mantém nosso código fluindo e
-            apoia a comunidade.
-          </p>
-          <img src={qrCodeImage} alt="QR Code" className="qr-code-image" />
-          <button className="close-button" onClick={closeModal}>
-            X
-          </button>
-        </div>
+        <CoffeeModalContent closeModal={closeModal} />
       </Modal>
     </footer>
   );
