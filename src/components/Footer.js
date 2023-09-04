@@ -5,7 +5,9 @@ import coffeeIcon from '../assets.js/images/coffe.png';
 import qrCodeImage from '../assets.js/images/qrcode.png';
 import Modal from 'react-modal';
 
-Modal.setAppElement('#root');
+if (process.env.NODE_ENV !== 'test') {
+  Modal.setAppElement('#root');
+}
 
 const Footer = () => {
   const location = useLocation();
@@ -46,6 +48,7 @@ const Footer = () => {
           <i className="bi bi-linkedin" style={iconStyle}></i>
         </a>
         <i
+          data-testid="open-modal-icon"
           className="bi bi-cup-straw"
           style={iconStyle}
           onClick={openModal}
@@ -57,6 +60,7 @@ const Footer = () => {
         className="coffee-modal border-0"
         overlayClassName="overlay"
         shouldCloseOnOverlayClick={false}
+        ariaHideApp={false}
       >
         <div className="modal-header text-center">
           <h2 className="modal-title w-100 title-coffe">
