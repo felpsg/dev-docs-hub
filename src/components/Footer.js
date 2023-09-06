@@ -39,7 +39,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="footer">
+    <footer className="footer" id="footerAbsolute">
       <div className="footer-content">
         <h4 className="footer-title">CodeHub</h4>
         <p className="footer-text">Tecnologia para o futuro.</p>
