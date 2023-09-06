@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets.js/styles/header.css';
 import rocketIcon from '../assets.js/images/rocket-icon1.png';
+import '../assets.js/styles/header.css';
+
+
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
@@ -51,11 +54,7 @@ const Header = () => {
           </button>
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="./components/chat"
-                onClick={handleToggle}
-              >
+              <Link className="nav-link" to="/login" onClick={handleToggle}>
                 <i className="bi bi-person"></i> Login
               </Link>
             </li>

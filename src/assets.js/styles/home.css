@@ -5,12 +5,12 @@ p {
 }
 
 .home p {
-  font-size: 20px !important;
+  font-size: 22px;
 }
 
 .home {
   margin-left: 20%;
-  margin-top: 25px;
+  margin-top: 1rem;
 }
 
 .home span {
@@ -28,12 +28,11 @@ p {
 .additional-section {
   border-top: 1px solid #f8a244;
   width: 600px;
-  margin-bottom: 2rem;
 }
 
 .additional-section h2 {
   color: #fff;
-  padding-top: 2rem;
+  padding-top: 1rem;
   font-size: 1.5rem;
 }
 

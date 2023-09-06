@@ -1,11 +1,17 @@
 body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
   font-family: Roboto Condensed, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #181a1b !important;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+  overflow-x: hidden;
+}
+
+.container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .video-container {
