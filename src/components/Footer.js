@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import '../assets.js/styles/footer.css';
 import Modal from 'react-modal';
+import { useLocation } from 'react-router-dom';
+
 import CoffeeModalContent from './CoffeeModalContent';
+
+import '../assets.js/styles/footer.css';
 
 if (process.env.NODE_ENV !== 'test') {
   Modal.setAppElement('#root');

@@ -1,9 +1,11 @@
+import { Field, Form, Formik, useFormikContext } from 'formik';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Formik, Field, Form, useFormikContext } from 'formik';
 import * as Yup from 'yup';
-import '../assets.js/styles/login.css';
+
 import backgroundImage from '../assets.js/images/javier-miranda-OiiVv1iiB0A-unsplash.jpg';
+
+import '../assets.js/styles/login.css';
 
 const validationSchema = Yup.object({
   email: Yup.string()

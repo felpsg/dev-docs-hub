@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { REACT_CARD_CONTENTS } from '../../pages/ReactDoc';
+
 import '../../assets.js/styles/Step1.css';
 
 function Step1() {

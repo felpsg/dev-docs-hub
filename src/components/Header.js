@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../assets.js/styles/header.css';
+
 import rocketIcon from '../assets.js/images/rocket-icon1.png';
+
 import '../assets.js/styles/header.css';
-
-
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);

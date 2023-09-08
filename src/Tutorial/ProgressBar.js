@@ -1,4 +1,5 @@
 import React from 'react';
+
 import carSvg from '../assets.js/images/car.svg';
 
 function ProgressBar({ progress }) {

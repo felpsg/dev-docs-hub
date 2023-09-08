@@ -1,4 +1,5 @@
 import React from 'react';
+
 import coffeeIcon from '../assets.js/images/coffe.png';
 import qrCodeImage from '../assets.js/images/qrcode.png';
 

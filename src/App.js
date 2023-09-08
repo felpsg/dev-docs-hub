@@ -1,31 +1,34 @@
 import React from 'react';
-import './App.css';
 import {
-  BrowserRouter as Router,
+  Navigate,
   Route,
+  BrowserRouter as Router,
   Routes,
   useLocation,
 } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
-import Header from './components/Header';
-import Home from './pages/Home';
-import Sidebar from './components/Sidebar';
-import Chat from './components/Chat';
-import TutorialPage from './Tutorial/TutorialPage';
-import Footer from './components/Footer';
-import Login from './components/Login';
 
+// Import Pages
+import Chat from './components/Chat';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Login from './components/Login';
+import Sidebar from './components/Sidebar';
+import Home from './pages/Home';
+// Import Tutorial CSS
 import CssStep1 from './Tutorial/Css/Step1';
 import CssStep2 from './Tutorial/Css/Step2';
-
+// Import Tutorial JavaScript
 import JavaScriptStep1 from './Tutorial/JavaScript/Step1';
 import JavaScriptStep2 from './Tutorial/JavaScript/Step2';
 import JavaScriptStep3 from './Tutorial/JavaScript/Step3';
 import JavaScriptStep4 from './Tutorial/JavaScript/Step4';
-
+// Import Tutorial React
 import ReactStep1 from './Tutorial/React/Step1';
 import ReactStep2 from './Tutorial/React/Step2';
 import ReactStep3 from './Tutorial/React/Step3';
+import TutorialPage from './Tutorial/TutorialPage';
+
+import './App.css';
 
 function App() {
   const location = useLocation();
