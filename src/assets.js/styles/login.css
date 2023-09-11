@@ -60,12 +60,7 @@
   border-radius: 16px;
   width: 500px;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   transition: 0.3s;
-}
-
-.login-box:hover {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilização dos campos de input */
@@ -130,9 +125,9 @@ button:hover {
   outline: none;
 }
 
-.error-icon {
-  position: absolute;
-  top: 50%;
-  right: -30px; /* Ajuste este valor conforme necessário */
-  transform: translateY(-50%);
+.validation-message {
+  display: inline-block;
+  font-size: 1rem;
+  margin-top: 8px;
+  font-family: 'Roboto', sans-serif;
 }

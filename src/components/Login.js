@@ -1,9 +1,11 @@
+import { Field, Form, Formik, useFormikContext } from 'formik';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Formik, Field, Form, useFormikContext } from 'formik';
 import * as Yup from 'yup';
-import '../assets.js/styles/login.css';
+
 import backgroundImage from '../assets.js/images/javier-miranda-OiiVv1iiB0A-unsplash.jpg';
+
+import '../assets.js/styles/login.css';
 
 const validationSchema = Yup.object({
   email: Yup.string()
@@ -81,16 +83,24 @@ const InputField = ({ name, type, placeholder, icon }) => {
         aria-label={placeholder}
       />
       {touched[name] && (
-        <i
-          className={`bi ${
+        <div
+          className={`validation-message ${
+            errors[name] ? 'text-danger' : 'text-success'
+          }`}
+          style={{
+            marginLeft: '10px',
+          }}
+        >
+          {errors[name] ? (
             errors[name]
-              ? 'bi-x-circle-fill text-danger'
-              : values[name]
-              ? 'bi-check text-success'
-              : ''
-          } error-icon`}
-          title={errors[name]}
-        ></i>
+          ) : values[name] ? (
+            <span>
+              <i className="bi bi-check-circle-fill"></i>
+            </span>
+          ) : (
+            ''
+          )}
+        </div>
       )}
     </div>
   );
