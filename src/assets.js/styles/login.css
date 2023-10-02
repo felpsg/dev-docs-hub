@@ -127,7 +127,7 @@ button:hover {
 
 .validation-message {
   display: inline-block;
-  font-size: 1rem;
+  font-size: 16px;
   margin-top: 8px;
   font-family: 'Roboto', sans-serif;
 }
