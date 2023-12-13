@@ -1,23 +1,17 @@
-import { Field, Form, Formik, useFormikContext } from 'formik';
+// Login.js
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
+import { Link } from 'react-router-dom';
+
+// Importe o InputField
+import InputField from './InputField'; // Ajuste o caminho conforme necessário
 
 import backgroundImage from '../assets.js/images/javier-miranda-OiiVv1iiB0A-unsplash.jpg';
-
 import '../assets.js/styles/login.css';
 
 const validationSchema = Yup.object({
-  email: Yup.string()
-    .matches(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, 'Email inválido')
-    .required('Obrigatório'),
-  password: Yup.string()
-    .min(8, 'A senha deve ter pelo menos 8 caracteres')
-    .matches(/[a-z]/, 'A senha deve ter pelo menos uma letra minúscula')
-    .matches(/[A-Z]/, 'A senha deve ter pelo menos uma letra maiúscula')
-    .matches(/\d/, 'A senha deve ter pelo menos um número')
-    .matches(/[@$!%*?&]/, 'A senha deve ter pelo menos um símbolo')
-    .required('Obrigatório'),
+  // suas regras de validação...
 });
 
 const Login = () => {
@@ -39,6 +33,7 @@ const Login = () => {
           onSubmit={handleSubmit}
         >
           <Form>
+            {/* Use o InputField reutilizável */}
             <InputField
               name="email"
               type="email"
@@ -58,50 +53,11 @@ const Login = () => {
         </Formik>
         <p className="signup-text">
           Não tem uma conta?
-          <Link className="signup-link" to="/cadastro">
+          <Link className="signup-link" to="/Cadastro">
             <i className="bi bi-person-plus signup-icon"></i> Cadastre-se
           </Link>
         </p>
       </div>
-    </div>
-  );
-};
-
-const InputField = ({ name, type, placeholder, icon }) => {
-  const { errors, touched, values } = useFormikContext();
-
-  return (
-    <div className="input-group">
-      <i
-        aria-label={`Ícone de ${placeholder.toLowerCase()}`}
-        className={`input-group-icon ${icon}`}
-      />
-      <Field
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        aria-label={placeholder}
-      />
-      {touched[name] && (
-        <div
-          className={`validation-message ${
-            errors[name] ? 'text-danger' : 'text-success'
-          }`}
-          style={{
-            marginLeft: '10px',
-          }}
-        >
-          {errors[name] ? (
-            errors[name]
-          ) : values[name] ? (
-            <span>
-              <i className="bi bi-check-circle-fill"></i>
-            </span>
-          ) : (
-            ''
-          )}
-        </div>
-      )}
     </div>
   );
 };

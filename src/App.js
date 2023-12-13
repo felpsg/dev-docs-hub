@@ -11,6 +11,7 @@ import Chat from './components/Chat';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Login from './components/Login';
+import Cadastro from './components/Cadastro';
 import Sidebar from './components/Sidebar';
 import Home from './pages/Home';
 import CssStep1 from './Tutorial/Css/Step1';
@@ -39,6 +40,7 @@ function App() {
           <div className={`col-md-${shouldRenderSidebar ? '9' : '12'}`}>
             <Routes>
               <Route path="/login" element={<Login />} />
+              <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/" element={<Navigate to="/home" />} />
               <Route path="/home" element={<Home />} />
               <Route path="/chat" element={<Chat />} />
